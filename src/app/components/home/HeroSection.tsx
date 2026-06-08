@@ -1,15 +1,53 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+const heroBanners = [
+  "/hero/hero1.png",
+  "/hero/hero2.png",
+];
+
 export default function HeroSection() {
+  const [activeBanner, setActiveBanner] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveBanner((current) => (current + 1) % heroBanners.length);
+    }, 4000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <main className="min-h-screen bg-[color:var(--background)]">
-      <section
-        className="relative h-screen w-full bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/hero/hero1.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-[color:var(--secondary)]/65" />
+      <section className="relative h-screen w-full overflow-hidden">
+        {heroBanners.map((banner, index) => (
+          <div
+            key={banner}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              activeBanner === index ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url('${banner}')` }}
+          />
+        ))}
+
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-amber-950/90 via-amber-900/70 to-black/80" /> */}
+
+        <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          {heroBanners.map((banner, index) => (
+            <button
+              key={banner}
+              type="button"
+              aria-label={`Show hero slide ${index + 1}`}
+              onClick={() => setActiveBanner(index)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeBanner === index
+                  ? "w-10 bg-[color:var(--accent)]"
+                  : "w-2.5 bg-white/55 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-[1400px] items-center justify-between px-8 pt-[180px]">
           <div className="max-w-137.5 text-white">
