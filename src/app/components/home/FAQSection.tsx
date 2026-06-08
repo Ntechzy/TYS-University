@@ -10,7 +10,7 @@ const faqs = [
     answer:
       "Our campus is home to students from 68+ countries, offering a truly global environment where diverse perspectives shape every learning experience.",
     tag: "Campus Life",
-    accent: "#E8F4FD",
+    accent: "#E8F6FD",
     image:
       "https://www.shutterstock.com/image-photo/group-indian-asian-college-students-600nw-2481344555.jpg",
   },
@@ -20,7 +20,7 @@ const faqs = [
     answer:
       "530+ partnerships with top-ranked universities worldwide. Dual-degree programs, joint research, and international faculty exchanges open doors globally.",
     tag: "Global",
-    accent: "#F0FDF4",
+    accent: "#F6C344",
     image: "/images/faq/global.jpg",
   },
   {
@@ -29,7 +29,7 @@ const faqs = [
     answer:
       "Immersive language labs, cultural festivals, and dedicated international student support make transitioning to campus life seamless and enriching.",
     tag: "Culture",
-    accent: "#FFF7ED",
+    accent: "#5A1F22",
     image: "/images/faq/culture.jpg",
   },
   {
@@ -38,7 +38,7 @@ const faqs = [
     answer:
       "Collaborate on funded research with faculty and peers across disciplines. Projects span 30+ countries and address real-world challenges.",
     tag: "Research",
-    accent: "#FFFBEB",
+    accent: "#05498B",
     image: "/images/faq/research.jpg",
   },
   {
@@ -47,7 +47,7 @@ const faqs = [
     answer:
       "Learn from world-class professors representing over 40 nationalities. Their diverse expertise and global industry experience enrich every classroom.",
     tag: "Faculty",
-    accent: "#FDF4FF",
+    accent: "#E8F6FD",
     image: "/images/faq/faculty.jpg",
   },
   {
@@ -56,7 +56,7 @@ const faqs = [
     answer:
       "Our placement cell connects you with 500+ global employers. From internships to full-time offers, every student gets dedicated career coaching.",
     tag: "Careers",
-    accent: "#FFF1F2",
+    accent: "#F6C344",
     image: "/images/faq/careers.jpg",
   },
   {
@@ -65,7 +65,7 @@ const faqs = [
     answer:
       "Merit-based scholarships, need-based aid, and flexible payment support help students from different backgrounds access a quality university education.",
     tag: "Scholarships",
-    accent: "#EEF2FF",
+    accent: "#05498B",
     image: "/images/faq/scholarships.jpg",
   },
   {
@@ -74,7 +74,7 @@ const faqs = [
     answer:
       "Smart classrooms, advanced labs, collaborative studios, and digital libraries give students the tools they need for hands-on and future-ready learning.",
     tag: "Facilities",
-    accent: "#ECFEFF",
+    accent: "#E8F6FD",
     image: "/images/faq/facilities.jpg",
   },
   {
@@ -83,7 +83,7 @@ const faqs = [
     answer:
       "From technical societies to cultural clubs and sports events, students can build leadership skills, friendships, and strong campus memories beyond academics.",
     tag: "Student Life",
-    accent: "#FEF3C7",
+    accent: "#F6C344",
     image: "/images/faq/student-life.jpg",
   },
   {
@@ -92,8 +92,26 @@ const faqs = [
     answer:
       "Safe, comfortable accommodation options with round-the-clock support, study areas, and community spaces make campus living simple and welcoming.",
     tag: "Accommodation",
-    accent: "#FCE7F3",
+    accent: "#5A1F22",
     image: "/images/faq/hostel.jpg",
+  },
+  {
+    id: 11,
+    question: "Industry Exposure",
+    answer:
+      "Students benefit from expert talks, live projects, industrial visits, and internship programs that connect classroom learning with real professional practice.",
+    tag: "Industry",
+    accent: "#05498B",
+    image: "/images/faq/industry.jpg",
+  },
+  {
+    id: 12,
+    question: "Admissions Guidance",
+    answer:
+      "Our admissions team supports applicants at every step, from program selection and documentation to counseling, deadlines, and final enrollment.",
+    tag: "Admissions",
+    accent: "#E8F6FD",
+    image: "/images/faq/admissions.jpg",
   },
 ];
 
@@ -102,22 +120,24 @@ export default function FAQSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="w-full overflow-hidden bg-white px-6 py-20 font-sans md:px-12">
+    <section className="w-full overflow-hidden bg-[color:var(--background)] px-6 py-20 font-sans md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="mx-auto mb-14 max-w-3xl text-center"
       >
-        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-gray-400">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--secondary)]/70">
           Everything you need to know
         </p>
         <h2
-          className="text-4xl font-bold leading-tight text-gray-900 md:text-5xl"
+          className="text-4xl font-bold leading-tight text-[color:var(--foreground)] md:text-5xl"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
           Frequently Asked{" "}
-          <span className="font-normal italic text-gray-500">Questions</span>
+          <span className="font-normal italic text-[color:var(--primary)]/70">
+            Questions
+          </span>
         </h2>
       </motion.div>
 
@@ -142,11 +162,11 @@ export default function FAQSection() {
                   y: { delay: index * 0.07, duration: 0.5 },
                 }}
                 onClick={() => setActiveId(isActive ? null : faq.id)}
-                className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-gray-200"
+                className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-[color:var(--secondary)]/12"
                 style={{
                   width: isActive ? "520px" : "72px",
                   minHeight: "480px",
-                  backgroundColor: "#1a1a1a",
+                  backgroundColor: "var(--primary)",
                   scrollSnapAlign: "center",
                   transition: "width 0.5s cubic-bezier(0.22,1,0.36,1)",
                 }}
@@ -157,7 +177,7 @@ export default function FAQSection() {
                     backgroundImage: `url(${faq.image})`,
                     background: faq.image
                       ? `url(${faq.image}) center/cover no-repeat`
-                      : `linear-gradient(135deg, ${faq.accent}cc, #1a1a1a)`,
+                      : `linear-gradient(135deg, ${faq.accent}cc, var(--primary))`,
                   }}
                 />
 
@@ -165,7 +185,7 @@ export default function FAQSection() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.75) 75%, rgba(0,0,0,0.92) 100%)",
+                      "linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 40%, rgba(14,13,15,0.75) 75%, rgba(14,13,15,0.92) 100%)",
                   }}
                 />
 
@@ -173,7 +193,7 @@ export default function FAQSection() {
                   <motion.div
                     animate={{ rotate: isActive ? 45 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/40 bg-black/20 backdrop-blur-sm"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-white/40 bg-[color:var(--secondary)]/25 backdrop-blur-sm"
                   >
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                       <line
@@ -208,7 +228,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.2 }}
                       className="absolute inset-0 z-10 flex flex-col items-center justify-end pb-6"
                     >
-                      <span className="mb-4 text-[10px] font-medium tracking-widest text-white/50">
+                      <span className="mb-4 text-[10px] font-medium tracking-widest text-white/55">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div
@@ -238,7 +258,7 @@ export default function FAQSection() {
                       className="absolute inset-0 z-10 flex items-center justify-center px-7 py-7"
                     >
                       <div className="w-full max-w-sm text-center">
-                        <span className="mb-4 inline-block rounded-full border border-white/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                        <span className="mb-4 inline-block rounded-full border border-white/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/75">
                           {faq.tag}
                         </span>
 
@@ -251,7 +271,7 @@ export default function FAQSection() {
                           {faq.question}
                         </h3>
 
-                        <div className="mx-auto mb-4 h-0.5 w-10 rounded-full bg-white/90" />
+                        <div className="mx-auto mb-4 h-0.5 w-10 rounded-full bg-[color:var(--accent)]" />
 
                         <p className="text-sm leading-relaxed text-white/85">
                           {faq.answer}
@@ -274,7 +294,7 @@ export default function FAQSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="mt-4 text-center text-xs tracking-wide text-gray-400"
+        className="mt-4 text-center text-xs tracking-wide text-[color:var(--secondary)]/70"
       >
         Click any card to expand
       </motion.p>
