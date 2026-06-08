@@ -148,34 +148,46 @@ export default function AboutUniversity() {
       {/* ══════════════════════════════════════════════════════════════════
           STATS TICKER ROW
       ══════════════════════════════════════════════════════════════════ */}
-      <div className="relative z-10 mt-14 border-y border-[#D4C9B8] bg-[#0A0905] overflow-hidden">
+<div className="relative z-10 mt-10 overflow-hidden border-y border-[#D4C9B8] bg-[#0A0905] sm:mt-12 md:mt-14">
+  <motion.div
+    variants={stagger}
+    initial="hidden"
+    whileInView="visible"
+    viewport={inView}
+    className="mx-auto grid max-w-[1700px] grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+  >
+    {stats.map((item, i) => {
+      const Icon = item.icon;
+
+      return (
         <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={inView}
-          className="mx-auto max-w-[1700px] grid grid-cols-5"
+          key={i}
+          variants={fadeUp}
+          className={`
+            group flex flex-col items-center justify-center gap-2 px-3 py-6 text-center
+            transition-colors duration-300 hover:bg-white/[0.04]
+            border-white/10
+            border-b
+            ${i % 2 === 0 ? "border-r" : ""}
+            sm:border-r sm:[&:nth-child(3n)]:border-r-0
+            lg:border-b-0 lg:border-r lg:last:border-r-0
+            sm:px-4 sm:py-7
+          `}
         >
-          {stats.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="group flex flex-col items-center gap-2 px-4 py-7 border-r border-white/10 last:border-r-0 transition-colors duration-300 hover:bg-white/[0.04]"
-              >
-                <Icon size={18} className="text-[#D4A96A]" />
-                <span className="font-display text-3xl font-black text-white md:text-4xl">
-                  {item.value}
-                </span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/40">
-                  {item.label}
-                </span>
-              </motion.div>
-            );
-          })}
+          <Icon size={18} className="text-[#D4A96A]" />
+
+          <span className="font-display text-2xl font-black leading-none text-white sm:text-3xl md:text-4xl">
+            {item.value}
+          </span>
+
+          <span className="max-w-[120px] text-[9px] font-bold uppercase leading-relaxed tracking-[0.16em] text-white/40 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
+            {item.label}
+          </span>
         </motion.div>
-      </div>
+      );
+    })}
+  </motion.div>
+</div>
 
       {/* ══════════════════════════════════════════════════════════════════
           MAIN BENTO GRID
