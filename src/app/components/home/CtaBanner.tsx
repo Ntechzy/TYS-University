@@ -12,7 +12,8 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ backgroundImageUrl }) => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-8">
+<div className="bg-[#F4F1EC]">
+        <div className="mx-auto w-full max-w-7xl px-4 py-8 ">
       <div
         className="relative flex min-h-[160px] items-center overflow-hidden rounded-xl bg-[color:var(--primary)] bg-cover bg-center shadow-lg md:min-h-[200px]"
         style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
@@ -53,6 +54,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ backgroundImageUrl }) => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 

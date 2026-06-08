@@ -67,7 +67,7 @@ export default function AdmissionProcess() {
     <section className="relative min-h-screen overflow-hidden bg-[#F8F8F8] px-4 py-6 text-white md:px-8 lg:px-10">
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-0 top-0 h-105 w-105 rounded-full bg-[#5A1F22]/15 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-[460px] w-[460px] rounded-full bg-[#05498B]/20 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-115 w-[460px] rounded-full bg-[#05498B]/20 blur-[110px]" />
 
       <div className="relative mx-auto grid min-h-[calc(100vh-48px)] max-w-[1700px] overflow-hidden rounded-[36px] bg-[#340606] shadow-2xl lg:grid-cols-[1.1fr_0.9fr]">
         {/* Left Section */}

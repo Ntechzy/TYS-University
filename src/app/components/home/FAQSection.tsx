@@ -130,10 +130,7 @@ export default function FAQSection() {
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--secondary)]/70">
           Everything you need to know
         </p>
-        <h2
-          className="text-4xl font-bold leading-tight text-[color:var(--foreground)] md:text-5xl"
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-        >
+        <h2 className="font-display text-4xl font-bold leading-tight text-[color:var(--foreground)] md:text-5xl">
           Frequently Asked{" "}
           <span className="font-normal italic text-[color:var(--primary)]/70">
             Questions
@@ -262,12 +259,7 @@ export default function FAQSection() {
                           {faq.tag}
                         </span>
 
-                        <h3
-                          className="mb-3 text-2xl font-bold leading-snug text-white"
-                          style={{
-                            fontFamily: "'Playfair Display', Georgia, serif",
-                          }}
-                        >
+                        <h3 className="font-display mb-3 text-2xl font-bold leading-snug text-white">
                           {faq.question}
                         </h3>
 
