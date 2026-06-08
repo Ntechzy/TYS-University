@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -104,9 +104,21 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const activeNav = navItems.find((item) => item.label === activeMenu);
   const announcement = announcements[announcementIndex];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const showPreviousAnnouncement = () => {
     setAnnouncementIndex((current) =>
@@ -135,8 +147,14 @@ export default function Navbar() {
   };
 
   return (
-    <header className="absolute left-0 top-0 z-50 w-full text-white">
-      <div className="border-b border-white/10 bg-[color:var(--primary)]/90 px-2 py-1.5 backdrop-blur-sm sm:h-9 sm:py-0">
+    <header
+      className={`fixed left-0 top-0 z-50 w-full transition-colors duration-300 ${
+        isScrolled
+          ? "text-black [text-shadow:none]"
+          : "text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]"
+      }`}
+    >
+      <div className="border-b border-white/10 bg-[color:var(--primary)]/92 px-2 py-1.5 backdrop-blur-sm sm:h-9 sm:py-0">
         <div className="mx-auto flex h-full max-w-[1920px] items-center justify-between sm:justify-center">
           <button
             type="button"
@@ -147,8 +165,8 @@ export default function Navbar() {
             <ChevronLeft size={14} />
           </button>
 
-          <div className="flex flex-1 flex-col items-center justify-center gap-1.5 text-center sm:flex-row sm:gap-4">
-            <span className="text-[10px] font-medium leading-tight sm:text-xs">
+          <div className="flex flex-1 flex-col items-center justify-center gap-1.5 text-center text-white sm:flex-row sm:gap-4">
+            <span className="text-[10px] font-medium leading-tight text-white sm:text-xs">
               {announcement}
             </span>
 
@@ -171,7 +189,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="border-b border-white/10 bg-[color:var(--secondary)]/82 backdrop-blur-sm">
+      <div
+        className={`border-b backdrop-blur-md transition-colors duration-300 ${
+          isScrolled
+            ? "border-black/10 bg-[#F4F1EC]"
+            : "border-white/15 bg-black/18"
+        }`}
+      >
         <div className="mx-auto flex max-w-[1920px] items-center justify-between p-3 md:h-20 md:px-4">
           <Link href="/" className="flex shrink-0 items-center gap-2">
             <Image
@@ -189,7 +213,11 @@ export default function Navbar() {
               <span className="block text-base font-black uppercase leading-none md:text-xl">
                 University
               </span>
-              <span className="mt-0.5 block text-[8px] text-white/80 md:text-[10px]">
+              <span
+                className={`mt-0.5 block text-[8px] md:text-[10px] ${
+                  isScrolled ? "text-black/70" : "text-white/90"
+                }`}
+              >
                 Discover. Learn. Empower.
               </span>
             </span>
@@ -200,7 +228,9 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="transition-colors hover:text-[color:var(--accent)]"
+                className={`transition-colors hover:text-[color:var(--accent)] ${
+                  isScrolled ? "text-black/85" : "text-white/95"
+                }`}
                 onClick={closeMenus}
               >
                 {link.label}
@@ -209,7 +239,11 @@ export default function Navbar() {
           </div>
 
           <div className="flex shrink-0 items-center gap-3 md:gap-4">
-            <div className="hidden items-center gap-3 text-white/90 2xl:flex">
+            <div
+              className={`hidden items-center gap-3 2xl:flex ${
+                isScrolled ? "text-black/85" : "text-white/95"
+              }`}
+            >
               <a
                 href="https://wa.me/911800121288800"
                 className="text-xs transition-colors hover:text-[color:var(--accent)]"
@@ -253,7 +287,7 @@ export default function Navbar() {
 
             <a
               href="tel:1800121288800"
-              className="hidden h-12 items-center justify-between rounded bg-[color:var(--primary)] px-4 transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)] lg:flex"
+              className="hidden h-12 items-center justify-between rounded bg-[color:var(--primary)] px-4 text-white transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)] lg:flex"
             >
               <span className="flex items-center gap-3">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-white">
@@ -272,7 +306,7 @@ export default function Navbar() {
               type="button"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[color:var(--primary)] transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)]"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[color:var(--primary)] text-white transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)]"
               onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
             >
               {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -292,7 +326,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      <nav className="hidden border-t border-white/10 bg-[color:var(--secondary)]/82 backdrop-blur-sm md:block">
+      <nav
+        className={`hidden border-t backdrop-blur-md transition-colors duration-300 md:block ${
+          isScrolled
+            ? "border-black/10 bg-[#F4F1EC]"
+            : "border-white/15 bg-black/18"
+        }`}
+      >
         <div className="mx-auto flex h-[45px] max-w-[1920px] items-center overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {navItems.map((item) => {
             const isActive = item.label === activeMenu;
@@ -305,7 +345,9 @@ export default function Navbar() {
                 <button
                   type="button"
                   aria-expanded={isActive}
-                  className="flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-[color:var(--accent)] lg:px-6 lg:text-sm"
+                className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-[color:var(--accent)] lg:px-6 lg:text-sm ${
+                  isScrolled ? "text-black" : "text-white"
+                }`}
                   onClick={() =>
                     setActiveMenu((current) =>
                       current === item.label ? null : item.label,
@@ -324,13 +366,23 @@ export default function Navbar() {
         </div>
 
         {activeNav ? (
-          <div className="border-t border-white/10 bg-[color:var(--primary)]/96 shadow-2xl">
+          <div
+            className={`border-t shadow-2xl ${
+              isScrolled
+                ? "border-black/10 bg-[#F4F1EC]"
+                : "border-white/10 bg-[color:var(--primary)]/96"
+            }`}
+          >
             <div className="mx-auto grid max-w-[1920px] grid-cols-3 gap-3 px-8 py-5">
               {activeNav.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="rounded border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold transition hover:border-[color:var(--accent)]/70 hover:bg-[color:var(--accent)]/15"
+                  className={`rounded px-4 py-3 text-sm font-semibold transition hover:border-[color:var(--accent)]/70 hover:bg-[color:var(--accent)]/15 ${
+                    isScrolled
+                      ? "border border-black/10 bg-black/3 text-black"
+                      : "border border-white/10 bg-white/5 text-white"
+                  }`}
                   onClick={closeMenus}
                 >
                   {link.label}
@@ -343,7 +395,11 @@ export default function Navbar() {
 
       {isSearchOpen ? (
         <form
-          className="border-t border-white/10 bg-[color:var(--primary)]/96 px-3 py-4 shadow-2xl"
+          className={`border-t px-3 py-4 shadow-2xl ${
+            isScrolled
+              ? "border-black/10 bg-[#F4F1EC]"
+              : "border-white/10 bg-[color:var(--primary)]/96"
+          }`}
           onSubmit={handleSearch}
         >
           <div className="mx-auto flex max-w-3xl items-center gap-2">
@@ -367,7 +423,7 @@ export default function Navbar() {
       ) : null}
 
       {isMobileMenuOpen ? (
-        <div className="max-h-[calc(100vh-88px)] overflow-y-auto border-t border-white/10 bg-[color:var(--primary)]/98 px-4 py-5 shadow-2xl lg:hidden">
+        <div className="max-h-[calc(100vh-88px)] overflow-y-auto border-t border-black/10 bg-[#F4F1EC] px-4 py-5 text-black shadow-2xl lg:hidden">
           <div className="grid gap-3">
             <a
               href="#apply"
@@ -391,12 +447,12 @@ export default function Navbar() {
                 <summary className="cursor-pointer px-4 py-3 text-sm font-bold">
                   {item.label}
                 </summary>
-                <div className="grid gap-1 border-t border-white/10 bg-white/5 p-2">
+                <div className="grid gap-1 border-t border-black/10 bg-black/3 p-2">
                   {item.links.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
-                      className="rounded px-3 py-2 text-sm text-white/85 transition hover:bg-white/10 hover:text-white"
+                      className="rounded px-3 py-2 text-sm text-black/80 transition hover:bg-black/5 hover:text-black"
                       onClick={closeMenus}
                     >
                       {link.label}

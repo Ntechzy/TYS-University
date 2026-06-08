@@ -120,17 +120,17 @@ export default function FAQSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="w-full overflow-hidden bg-[color:var(--background)] px-6 py-20 font-sans md:px-12">
+    <section className="w-full overflow-hidden bg-[color:var(--background)] px-4 py-16 font-sans sm:px-6 md:px-12 md:py-20">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mb-14 max-w-3xl text-center"
+        className="mx-auto mb-10 max-w-3xl text-center md:mb-14"
       >
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[color:var(--secondary)]/70">
           Everything you need to know
         </p>
-        <h2 className="font-display text-4xl font-bold leading-tight text-[color:var(--foreground)] md:text-5xl">
+        <h2 className="font-display text-3xl font-bold leading-tight text-[color:var(--foreground)] sm:text-4xl md:text-5xl">
           Frequently Asked{" "}
           <span className="font-normal italic text-[color:var(--primary)]/70">
             Questions
@@ -138,7 +138,64 @@ export default function FAQSection() {
         </h2>
       </motion.div>
 
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto grid max-w-3xl gap-3 md:hidden">
+        {faqs.map((faq, index) => {
+          const isActive = activeId === faq.id;
+
+          return (
+            <motion.button
+              key={faq.id}
+              type="button"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05, duration: 0.35 }}
+              onClick={() => setActiveId(isActive ? null : faq.id)}
+              className="overflow-hidden rounded-2xl border border-[color:var(--secondary)]/12 bg-[color:var(--soft-background)] text-left shadow-sm"
+            >
+              <div className="flex items-start justify-between gap-4 px-5 py-4">
+                <div>
+                  <span className="mb-2 inline-block rounded-full bg-[color:var(--accent)]/20 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[color:var(--primary)]">
+                    {faq.tag}
+                  </span>
+                  <h3 className="font-display text-lg font-bold leading-snug text-[color:var(--foreground)]">
+                    {faq.question}
+                  </h3>
+                </div>
+
+                <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[color:var(--primary)] text-white">
+                  <motion.span
+                    animate={{ rotate: isActive ? 45 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-lg leading-none"
+                  >
+                    +
+                  </motion.span>
+                </span>
+              </div>
+
+              <AnimatePresence initial={false}>
+                {isActive && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="border-t border-[color:var(--secondary)]/10 px-5 pb-5 pt-4">
+                      <p className="text-sm leading-relaxed text-[color:var(--foreground)]/80">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          );
+        })}
+      </div>
+
+      <div className="mx-auto hidden max-w-7xl md:block">
         <div
           ref={scrollRef}
           className="flex gap-3 overflow-x-auto pb-6 scrollbar-hide xl:justify-center"
@@ -286,7 +343,7 @@ export default function FAQSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="mt-4 text-center text-xs tracking-wide text-[color:var(--secondary)]/70"
+        className="mt-4 hidden text-center text-xs tracking-wide text-[color:var(--secondary)]/70 md:block"
       >
         Click any card to expand
       </motion.p>

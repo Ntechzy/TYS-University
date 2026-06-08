@@ -2,10 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const heroBanners = [
-  "/hero/hero1.png",
-  "/hero/hero2.png",
-];
+const heroBanners = ["/hero/hero1.png", "/hero/hero2.png"];
 
 export default function HeroSection() {
   const [activeBanner, setActiveBanner] = useState(0);
@@ -19,48 +16,33 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[color:var(--background)]">
-      <section className="relative h-screen w-full overflow-hidden">
+    <main className="min-h-screen bg-background pt-16 md:pt-20">
+      <section className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden md:h-auto">
         {heroBanners.map((banner, index) => (
           <div
             key={banner}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            className={`absolute inset-0 bg-cover  transition-opacity duration-1000 sm:bg-center md:bg-center ${
               activeBanner === index ? "opacity-100" : "opacity-0"
             }`}
             style={{ backgroundImage: `url('${banner}')` }}
           />
         ))}
 
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-amber-950/90 via-amber-900/70 to-black/80" /> */}
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/45 md:bg-black/35" />
 
-        <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-          {heroBanners.map((banner, index) => (
-            <button
-              key={banner}
-              type="button"
-              aria-label={`Show hero slide ${index + 1}`}
-              onClick={() => setActiveBanner(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                activeBanner === index
-                  ? "w-10 bg-[color:var(--accent)]"
-                  : "w-2.5 bg-white/55 hover:bg-white/80"
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="relative z-10 mx-auto flex h-full max-w-[1400px] items-center justify-between px-8 pt-[180px]">
-          <div className="max-w-137.5 text-white">
-            <h1 className="mb-8 text-6xl font-bold leading-tight">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-[1400px] items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
+          <div className="w-full max-w-[620px] text-white">
+            <h1 className="mb-5 text-4xl font-bold leading-tight sm:text-5xl md:mb-8 md:text-6xl">
               Best Private University in Punjab (India)
             </h1>
 
-            <p className="mb-10 text-lg text-white/85">
+            <p className="mb-8 max-w-[520px] text-base leading-relaxed text-white/85 sm:text-lg md:mb-10">
               Chandigarh University is focused on innovation, sustainability,
               and academic excellence with world-class infrastructure.
             </p>
 
-            <button className="rounded bg-[color:var(--accent)] px-10 py-4 font-semibold text-[color:var(--foreground)] transition hover:bg-[color:var(--soft-background)]">
+            <button className="rounded bg-[color:var(--accent)] px-7 py-3 text-sm font-semibold text-[color:var(--foreground)] transition hover:bg-[color:var(--soft-background)] sm:px-10 sm:py-4 sm:text-base">
               APPLY TODAY →
             </button>
           </div>
@@ -125,6 +107,22 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2 md:bottom-10">
+          {heroBanners.map((banner, index) => (
+            <button
+              key={banner}
+              type="button"
+              aria-label={`Show hero slide ${index + 1}`}
+              onClick={() => setActiveBanner(index)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                activeBanner === index
+                  ? "w-9 bg-[color:var(--accent)]"
+                  : "w-2.5 bg-white/55 hover:bg-white/80"
+              }`}
+            />
+          ))}
         </div>
       </section>
     </main>
