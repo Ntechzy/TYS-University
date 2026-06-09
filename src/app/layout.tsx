@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,8 +34,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}
-        </body>
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -73,7 +73,7 @@ export default function AboutUniversity() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-[1700px] px-5 pt-20 md:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto max-w-425 px-5 pt-20 md:px-10 lg:px-16">
         <motion.p
           variants={fadeUp}
           initial="hidden"
@@ -150,7 +150,7 @@ export default function AboutUniversity() {
           initial="hidden"
           whileInView="visible"
           viewport={inView}
-          className="mx-auto grid max-w-[1700px] grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+          className="mx-auto grid max-w-425 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
         >
           {stats.map((item, i) => {
             const Icon = item.icon;
@@ -159,9 +159,9 @@ export default function AboutUniversity() {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className={`group flex flex-col items-center justify-center gap-2 border-b border-white/10 px-3 py-6 text-center transition-colors duration-300 hover:bg-white/[0.04] ${
+                className={`group flex flex-col items-center justify-center gap-2 border-b border-white/10 px-3 py-6 text-center transition-colors duration-300 hover:bg-white/4 ${
                   i % 2 === 0 ? "border-r" : ""
-                } sm:border-r sm:px-4 sm:py-7 sm:[&:nth-child(3n)]:border-r-0 lg:border-b-0 lg:border-r lg:last:border-r-0`}
+                } sm:border-r sm:px-4 sm:py-7 sm:nth-[3n]:border-r-0 lg:border-b-0 lg:border-r lg:last:border-r-0`}
               >
                 <Icon size={18} className="text-[#D4A96A]" />
 
@@ -169,7 +169,7 @@ export default function AboutUniversity() {
                   {item.value}
                 </span>
 
-                <span className="max-w-[120px] text-[9px] font-bold uppercase leading-relaxed tracking-[0.16em] text-white/40 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
+                <span className="max-w-30 text-[9px] font-bold uppercase leading-relaxed tracking-[0.16em] text-white/40 sm:max-w-none sm:text-[10px] sm:tracking-[0.22em]">
                   {item.label}
                 </span>
               </motion.div>
@@ -178,14 +178,14 @@ export default function AboutUniversity() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1700px] px-5 py-10 md:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto max-w-425 px-5 py-10 md:px-10 lg:px-16">
         <div className="grid gap-3 lg:grid-cols-12 lg:grid-rows-[auto_auto]">
           <motion.div
             variants={fadeLeft}
             initial="hidden"
             whileInView="visible"
             viewport={inView}
-            className="relative min-h-[480px] overflow-hidden rounded-3xl lg:col-span-5 lg:row-span-2"
+            className="relative min-h-120 overflow-hidden rounded-3xl lg:col-span-5 lg:row-span-2"
           >
             <Image
               src="/about/student-college.png"
@@ -194,7 +194,7 @@ export default function AboutUniversity() {
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0905]/90 via-[#0A0905]/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#0A0905]/90 via-[#0A0905]/20 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4A96A]">
                 Legacy since 2005
@@ -218,7 +218,7 @@ export default function AboutUniversity() {
             initial="hidden"
             whileInView="visible"
             viewport={inView}
-            className="relative min-h-[220px] overflow-hidden rounded-3xl lg:col-span-3"
+            className="relative min-h-55 overflow-hidden rounded-3xl lg:col-span-3"
           >
             <Image
               src="/about/college-1.png"
@@ -226,7 +226,7 @@ export default function AboutUniversity() {
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
           </motion.div>
 
           <PillarCard
@@ -242,7 +242,7 @@ export default function AboutUniversity() {
             initial="hidden"
             whileInView="visible"
             viewport={inView}
-            className="relative min-h-[220px] overflow-hidden rounded-3xl lg:col-span-3"
+            className="relative min-h-55 overflow-hidden rounded-3xl lg:col-span-3"
           >
             <Image
               src="/about/classroom.png"
@@ -250,12 +250,12 @@ export default function AboutUniversity() {
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
           </motion.div>
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1700px] px-5 pb-20 md:px-10 lg:px-16">
+      <div className="relative z-10 mx-auto max-w-425 px-5 pb-20 md:px-10 lg:px-16">
         <div className="grid gap-3 lg:grid-cols-[1.5fr_0.9fr]">
           <motion.div
             variants={fadeLeft}
@@ -323,7 +323,7 @@ export default function AboutUniversity() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={inView}
                     transition={{ duration: 0.5, delay: i * 0.08, ease }}
-                    className="group flex items-center gap-4 rounded-2xl border border-white/8 bg-white/[0.04] px-5 py-4 transition-all duration-300 hover:border-[#D4A96A]/40 hover:bg-white/[0.07]"
+                    className="group flex items-center gap-4 rounded-2xl border border-white/8 bg-white/4 px-5 py-4 transition-all duration-300 hover:border-[#D4A96A]/40 hover:bg-white/[0.07]"
                   >
                     <span className="w-8 shrink-0 text-[10px] font-black uppercase tracking-widest text-[#D4A96A]/50 tabular-nums">
                       {String(i + 1).padStart(2, "0")}
@@ -375,7 +375,7 @@ function PillarCard({
       viewport={inView}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 340, damping: 28 }}
-      className={`group relative min-h-[220px] overflow-hidden rounded-3xl p-7 md:p-8 ${
+      className={`group relative min-h-55 overflow-hidden rounded-3xl p-7 md:p-8 ${
         isLight ? "border border-[#D4C9B8] bg-white" : "bg-[#05316E] text-white"
       } ${className}`}
     >

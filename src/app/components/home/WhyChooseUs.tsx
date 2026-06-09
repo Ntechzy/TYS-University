@@ -128,10 +128,10 @@ export default function WhyChooseUs() {
     <section className="relative overflow-hidden bg-[#F8F8F8] px-5 py-20 text-[#0E0D0F] md:px-10 lg:px-16">
 
       {/* Ambient glows */}
-      <div className="pointer-events-none absolute -left-40 top-0 h-[520px] w-[520px] rounded-full bg-[#5A1F22]/8 blur-[130px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[520px] w-[520px] rounded-full bg-[#05498B]/10 blur-[140px]" />
+      <div className="pointer-events-none absolute -left-40 top-0 h-130 w-130 rounded-full bg-[#5A1F22]/8 blur-[130px]" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-130 w-130 rounded-full bg-[#05498B]/10 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-[1400px]">
+      <div className="relative mx-auto max-w-350">
 
         {/* ════════════════════════════════════════════════════════════
             HEADER — split: text left | photo collage right
@@ -219,7 +219,7 @@ export default function WhyChooseUs() {
                 className="h-full w-full object-cover"
               />
               {/* Maroon tint overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#5A1F22]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#5A1F22]/60 via-transparent to-transparent" />
               {/* Caption chip */}
               <div className="absolute bottom-4 left-4 rounded-xl bg-white/10 px-4 py-2 backdrop-blur-md border border-white/20">
                 <p className="text-xs font-semibold text-white">Our Campus</p>
@@ -267,7 +267,7 @@ export default function WhyChooseUs() {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#5A1F22]/80 via-[#5A1F22]/40 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-r from-[#5A1F22]/80 via-[#5A1F22]/40 to-transparent" />
 
                   {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
@@ -277,7 +277,7 @@ export default function WhyChooseUs() {
                     <h3 className="text-xl font-black leading-tight text-white md:text-2xl">
                       {tile.label}
                     </h3>
-                    <div className="mt-2 h-[2px] w-0 bg-[#F6C344] transition-all duration-500 group-hover:w-16" />
+                    <div className="mt-2 h-0.5 w-0 bg-[#F6C344] transition-all duration-500 group-hover:w-16" />
                   </div>
                 </div>
               ) : (
@@ -292,7 +292,7 @@ export default function WhyChooseUs() {
                       style={{ borderRadius: "inherit" }}
                     >
                       {/* Gold bottom line */}
-                      <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#F6C344] transition-all duration-500 ease-out group-hover:w-full rounded-b-3xl" />
+                      <div className="absolute bottom-0 left-0 h-0.75 w-0 bg-[#F6C344] transition-all duration-500 ease-out group-hover:w-full rounded-b-3xl" />
 
                       {/* Decorative blob */}
                       <div
