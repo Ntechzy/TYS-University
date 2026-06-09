@@ -21,13 +21,8 @@ const announcements = [
 ];
 
 const utilityLinks = [
-  { label: "CAMPUSES", href: "#campuses" },
-  { label: "INTERNATIONAL", href: "#international" },
-  { label: "LIBRARY", href: "#library" },
-  { label: "STUDENT SERVICES", href: "#student-services" },
   { label: "CAREER", href: "#career" },
   { label: "BLOGS", href: "#blogs" },
-  { label: "TYSU PODCAST", href: "#podcast" },
   { label: "CONTACT US", href: "#contact" },
 ];
 
@@ -150,12 +145,12 @@ export default function Navbar() {
     <header
       className={`fixed left-0 top-0 z-50 w-full transition-colors duration-300 ${
         isScrolled
-          ? "text-black [text-shadow:none]"
+          ? "text-black text-shadow-none"
           : "text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]"
       }`}
     >
-      <div className="border-b border-white/10 bg-[color:var(--primary)]/92 px-2 py-1.5 backdrop-blur-sm sm:h-9 sm:py-0">
-        <div className="mx-auto flex h-full max-w-[1920px] items-center justify-between sm:justify-center">
+      <div className="border-b border-white/10 bg-(--primary)/92 px-2 py-1.5 backdrop-blur-sm sm:h-9 sm:py-0">
+        <div className="mx-auto flex h-full max-w-480 items-center justify-between sm:justify-center">
           <button
             type="button"
             aria-label="Previous announcement"
@@ -172,7 +167,7 @@ export default function Navbar() {
 
             <a
               href="#apply"
-              className="shrink-0 rounded bg-[color:var(--accent)] px-3 py-1 text-[9px] font-bold tracking-wide text-[color:var(--foreground)] transition hover:bg-[color:var(--soft-background)] sm:text-[10px]"
+              className="shrink-0 rounded bg-accent px-3 py-1 text-[9px] font-bold tracking-wide text-foreground transition hover:bg-soft-background sm:text-[10px]"
             >
               REGISTER NOW
             </a>
@@ -196,7 +191,7 @@ export default function Navbar() {
             : "border-white/15 bg-black/18"
         }`}
       >
-        <div className="mx-auto flex max-w-[1920px] items-center justify-between p-3 md:h-20 md:px-4">
+        <div className="mx-auto flex max-w-480 items-center justify-between p-3 md:h-20 md:px-4">
           <Link href="/" className="flex shrink-0 items-center gap-2">
             <Image
               src="/logo.png"
@@ -223,12 +218,12 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <div className="hidden items-center gap-4 text-[11px] font-medium tracking-wide xl:flex">
+          <div className="ml-auto mr-4 hidden items-center gap-4 text-[11px] font-medium tracking-wide xl:flex">
             {utilityLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className={`transition-colors hover:text-[color:var(--accent)] ${
+                className={`transition-colors hover:text-accent ${
                   isScrolled ? "text-black/85" : "text-white/95"
                 }`}
                 onClick={closeMenus}
@@ -246,7 +241,7 @@ export default function Navbar() {
             >
               <a
                 href="https://wa.me/911800121288800"
-                className="text-xs transition-colors hover:text-[color:var(--accent)]"
+                className="text-xs transition-colors hover:text-accent"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -255,28 +250,16 @@ export default function Navbar() {
               <a
                 href="tel:1800121288800"
                 aria-label="Call admission helpline"
-                className="transition-colors hover:text-[color:var(--accent)]"
+                className="transition-colors hover:text-accent"
               >
                 <Phone size={14} />
-              </a>
-              <a
-                href="tel:1800121288800"
-                className="text-xs transition-colors hover:text-[color:var(--accent)]"
-              >
-                Call Us
-              </a>
-              <a
-                href="#virtual-tour"
-                className="text-xs transition-colors hover:text-[color:var(--accent)]"
-              >
-                360 deg
               </a>
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   aria-label={link.name}
-                  className="min-w-4 text-center text-sm font-bold transition-colors hover:text-[color:var(--accent)]"
+                  className="min-w-4 text-center text-sm font-bold transition-colors hover:text-accent"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -287,7 +270,7 @@ export default function Navbar() {
 
             <a
               href="tel:1800121288800"
-              className="hidden h-12 items-center justify-between rounded bg-[color:var(--primary)] px-4 text-white transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)] lg:flex"
+              className="hidden h-12 items-center justify-between rounded bg-primary px-4 text-white transition hover:bg-accent hover:text-foreground lg:flex"
             >
               <span className="flex items-center gap-3">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-white">
@@ -306,7 +289,7 @@ export default function Navbar() {
               type="button"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-[color:var(--primary)] text-white transition hover:bg-[color:var(--accent)] hover:text-[color:var(--foreground)]"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-primary text-white transition hover:bg-accent hover:text-foreground md:hidden"
               onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
             >
               {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -316,7 +299,7 @@ export default function Navbar() {
               type="button"
               aria-label={isSearchOpen ? "Close search" : "Open search"}
               aria-expanded={isSearchOpen}
-              className="hidden shrink-0 flex-col items-center gap-0.5 transition-colors hover:text-[color:var(--accent)] sm:flex"
+              className="hidden shrink-0 flex-col items-center gap-0.5 transition-colors hover:text-accent sm:flex"
               onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
             >
               {isSearchOpen ? <X size={20} /> : <Search size={20} />}
@@ -333,7 +316,7 @@ export default function Navbar() {
             : "border-white/15 bg-black/18"
         }`}
       >
-        <div className="mx-auto flex h-[45px] max-w-[1920px] items-center overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mx-auto flex h-11.25 max-w-480 items-center overflow-x-auto whitespace-nowrap [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden">
           {navItems.map((item) => {
             const isActive = item.label === activeMenu;
 
@@ -345,7 +328,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   aria-expanded={isActive}
-                className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-[color:var(--accent)] lg:px-6 lg:text-sm ${
+                className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-accent lg:px-6 lg:text-sm ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
                   onClick={() =>
@@ -370,15 +353,15 @@ export default function Navbar() {
             className={`border-t shadow-2xl ${
               isScrolled
                 ? "border-black/10 bg-[#F4F1EC]"
-                : "border-white/10 bg-[color:var(--primary)]/96"
+                : "border-white/10 bg-(--primary)/96"
             }`}
           >
-            <div className="mx-auto grid max-w-[1920px] grid-cols-3 gap-3 px-8 py-5">
+            <div className="mx-auto grid max-w-480 grid-cols-3 gap-3 px-8 py-5">
               {activeNav.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`rounded px-4 py-3 text-sm font-semibold transition hover:border-[color:var(--accent)]/70 hover:bg-[color:var(--accent)]/15 ${
+                  className={`rounded px-4 py-3 text-sm font-semibold transition hover:border-(--accent)/70 hover:bg-(--accent)/15 ${
                     isScrolled
                       ? "border border-black/10 bg-black/3 text-black"
                       : "border border-white/10 bg-white/5 text-white"
@@ -398,7 +381,7 @@ export default function Navbar() {
           className={`border-t px-3 py-4 shadow-2xl ${
             isScrolled
               ? "border-black/10 bg-[#F4F1EC]"
-              : "border-white/10 bg-[color:var(--primary)]/96"
+              : "border-white/10 bg-(--primary)/96"
           }`}
           onSubmit={handleSearch}
         >
@@ -408,12 +391,12 @@ export default function Navbar() {
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               placeholder="Search TYS University"
-              className="h-11 flex-1 rounded border border-white/15 bg-white px-4 text-sm text-[color:var(--foreground)] outline-none focus:border-[color:var(--accent)]"
+              className="h-11 flex-1 rounded border border-white/15 bg-white px-4 text-sm text-foreground outline-none focus:border-accent"
               autoFocus
             />
             <button
               type="submit"
-              className="flex h-11 items-center gap-2 rounded bg-[color:var(--accent)] px-4 text-sm font-bold text-[color:var(--foreground)] transition hover:bg-white"
+              className="flex h-11 items-center gap-2 rounded bg-accent px-4 text-sm font-bold text-foreground transition hover:bg-white"
             >
               <Search size={16} />
               Search
@@ -427,14 +410,14 @@ export default function Navbar() {
           <div className="grid gap-3">
             <a
               href="#apply"
-              className="rounded bg-[color:var(--accent)] px-4 py-3 text-center text-sm font-bold text-[color:var(--foreground)] transition hover:bg-white"
+              className="rounded bg-accent px-4 py-3 text-center text-sm font-bold text-foreground transition hover:bg-white"
               onClick={closeMenus}
             >
               Apply Now
             </a>
             <a
               href="tel:1800121288800"
-              className="rounded border border-white/15 px-4 py-3 text-center text-sm font-bold transition hover:border-[color:var(--accent)]"
+              className="rounded border border-white/15 px-4 py-3 text-center text-sm font-bold transition hover:border-accent"
               onClick={closeMenus}
             >
               Call Admission Helpline
@@ -468,7 +451,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="rounded border border-white/10 px-3 py-2 text-xs font-semibold transition hover:border-[color:var(--accent)]"
+                className="rounded border border-white/10 px-3 py-2 text-xs font-semibold transition hover:border-accent"
                 onClick={closeMenus}
               >
                 {link.label}
@@ -483,7 +466,7 @@ export default function Navbar() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1 rounded border border-white/10 px-3 py-2 text-xs font-bold transition hover:border-[color:var(--accent)]"
+                className="flex items-center gap-1 rounded border border-white/10 px-3 py-2 text-xs font-bold transition hover:border-accent"
               >
                 {link.name}
                 <ExternalLink size={12} />
