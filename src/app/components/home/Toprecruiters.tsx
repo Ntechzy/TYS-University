@@ -23,16 +23,16 @@ const stats = [
 
 export default function TopRecruiters() {
   return (
-    <section className="bg-gradient-to-br from-slate-50 via-white to-blue-50 px-4 py-12 sm:px-6 lg:px-8">
+    <section className="bg-[linear-gradient(135deg,color-mix(in_srgb,var(--accent)_12%,white),white_55%,color-mix(in_srgb,var(--secondary)_10%,white))] px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[color:var(--secondary)]/15 bg-[color:var(--accent)]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[color:var(--secondary)]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
             Placement Partners
           </div>
           <h2 className="mb-3 text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl">
             Top Recruiters at{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[color:var(--primary)] to-[color:var(--secondary)] bg-clip-text text-transparent">
               LPU
             </span>
           </h2>
@@ -45,10 +45,10 @@ export default function TopRecruiters() {
           {recruiters.map((recruiter) => (
             <div
               key={recruiter.name}
-              className="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+              className="group rounded-2xl border border-[color:var(--secondary)]/10 bg-white p-4 shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:border-[color:var(--accent)]/60 hover:shadow-md"
             >
               <div className="mb-3 flex items-center justify-end">
-                <span className="rounded-full bg-blue-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-500">
+                <span className="rounded-full bg-[color:var(--accent)]/15 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[color:var(--primary)]">
                   {recruiter.category}
                 </span>
               </div>
