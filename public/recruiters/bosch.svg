@@ -1,0 +1,6 @@
+<svg width="160" height="72" viewBox="0 0 160 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="72" rx="16" fill="white"/>
+  <circle cx="48" cy="36" r="16" stroke="#EA0016" stroke-width="4"/>
+  <circle cx="48" cy="36" r="7" fill="#EA0016"/>
+  <text x="102" y="43" text-anchor="middle" fill="#EA0016" font-family="Arial, sans-serif" font-size="24" font-weight="800">BOSCH</text>
+</svg>

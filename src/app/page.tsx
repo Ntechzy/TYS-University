@@ -5,6 +5,7 @@ import QuickStats from './components/home/QuickStats';
 import AdmissionProcess from './components/home/AdmissionProcess';
 import WhyChooseUs from './components/home/WhyChooseUs';
 import AboutUniversity from './components/home/AboutUniversity';
+import TopRecruiters from './components/home/Toprecruiters';
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       />
       <WhyChooseUs/>
       <QuickStats/>
+      <TopRecruiters/>
       <AdmissionProcess/>
-            <FAQSection/>
+      <FAQSection/>
     </>
   );
 }
