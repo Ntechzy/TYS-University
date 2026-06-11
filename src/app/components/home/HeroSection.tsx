@@ -34,7 +34,7 @@ export default function HeroSection() {
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-350 items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
           <div className="w-full max-w-155 text-white">
             <h1 className="mb-5 text-4xl font-bold leading-tight sm:text-5xl md:mb-8 md:text-6xl">
-              Best Private University in Fatehpur (India)
+              Best Private University in UP
             </h1>
 
             <p className="mb-8 max-w-130 text-base leading-relaxed text-white/85 sm:text-lg md:mb-10">

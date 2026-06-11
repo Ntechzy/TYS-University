@@ -221,19 +221,32 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 bg-white/4 px-5 py-5 text-sm text-white/55 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <p>&copy; {year} TYS University. All rights reserved.</p>
-          <div className="flex flex-wrap gap-5">
-            <a href="#privacy" className="transition hover:text-white">
-              Privacy policy
-            </a>
-            <a href="#legal" className="transition hover:text-white">
-              Legal notice
-            </a>
-            <a href="#terms" className="transition hover:text-white">
-              Terms of service
-            </a>
-          </div>
-        </div>
+  <p>&copy; {year} TYS University. All rights reserved.</p>
+  
+  <p className="text-white/55 lg:text-center">
+    Developed &amp; Managed by{" "}
+    <a 
+      href="https://ntechzy.in" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="font-medium text-white transition-colors hover:text-[#f6c344] hover:underline"
+    >
+      Ntechzy
+    </a>
+  </p>
+
+  <div className="flex flex-wrap gap-5">
+    <a href="#privacy" className="transition hover:text-white">
+      Privacy policy
+    </a>
+    <a href="#legal" className="transition hover:text-white">
+      Legal notice
+    </a>
+    <a href="#terms" className="transition hover:text-white">
+      Terms of service
+    </a>
+  </div>
+</div>
       </div>
     </footer>
   );
