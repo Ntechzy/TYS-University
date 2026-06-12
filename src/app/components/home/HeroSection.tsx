@@ -1,11 +1,116 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { getAllStates, getDistricts } from "india-state-district";
+import { useEffect, useMemo, useState } from "react";
+
+const disciplines = [
+  {
+    discipline: "Faculty of Management",
+    programs: ["BBA", "MBA", "PhD"],
+  },
+  {
+    discipline: "Faculty of Engineering and Technology",
+    programs: ["B.Tech (CSE)", "B.Tech Honrs", "MTech", "B.Arch"],
+  },
+  {
+    discipline: "Faculty of Agriculture",
+    programs: [
+      "B.Sc (Honrs) Agriculture",
+      "M.Sc in Agriculture - Agronomy",
+      "M.Sc in Agriculture - Horticulture",
+      "M.Sc in Agriculture - Genetics and Plant Breeding",
+      "M.Sc in Agriculture - Soils Science and Soil Chemistry",
+      "M.Sc in Agriculture - Agriculture Extension",
+    ],
+  },
+  {
+    discipline: "Faculty of Arts",
+    programs: [
+      "BA",
+      "B.Lisc",
+      "M.Lisc",
+      "MA (Hindi)",
+      "MA (Urdu)",
+      "MA (English)",
+      "MA (Sanskrit)",
+      "MA (Political Science)",
+      "MA (Economics)",
+      "MA (Education)",
+      "MA (Home Science)",
+      "MA (Medieval and Modern History)",
+      "MA (Sociology)",
+      "BJMC",
+      "MJMC",
+      "MSW",
+    ],
+  },
+  {
+    discipline: "Faculty of Science",
+    programs: [
+      "B.Sc",
+      "M.Sc (Botany)",
+      "M.Sc (Chemistry)",
+      "M.Sc (Mathematics)",
+      "M.Sc (Physics)",
+      "M.Sc (Zoology)",
+      "BCA",
+      "MCA",
+    ],
+  },
+  {
+    discipline: "Faculty of Commerce",
+    programs: ["B.Com", "M.Com"],
+  },
+  {
+    discipline: "Faculty of Nursing",
+    programs: ["B.Sc Nursing", "GNM"],
+  },
+  {
+    discipline: "School of Pharmacy",
+    programs: ["D.Pharma", "B.Pharma"],
+  },
+  {
+    discipline: "Faculty of Law",
+    programs: ["BA LLB", "LLB", "LLM"],
+  },
+  {
+    discipline: "Yoga Course",
+    programs: ["PG Diploma in Yoga"],
+  },
+];
 
 const heroBanners = ["/hero/hero1.png", "/hero/hero2.png"];
 
 export default function HeroSection() {
   const [activeBanner, setActiveBanner] = useState(0);
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedDiscipline, setSelectedDiscipline] = useState("");
+const [selectedProgram, setSelectedProgram] = useState("");
+
+  const states = useMemo(() => getAllStates(), []);
+  const districts = useMemo(
+    () => (selectedState ? getDistricts(selectedState) : []),
+    [selectedState],
+  );
+
+  const programs = useMemo(
+  () =>
+    disciplines.find(
+      (item) => item.discipline === selectedDiscipline,
+    )?.programs ?? [],
+  [selectedDiscipline],
+);
+
+  const handleStateChange = (stateCode: string) => {
+    setSelectedState(stateCode);
+    setSelectedDistrict("");
+  };
+
+  const handleDisciplineChange = (discipline: string) => {
+  setSelectedDiscipline(discipline);
+  setSelectedProgram("");
+};
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -82,24 +187,75 @@ export default function HeroSection() {
                 />
 
                 <div className="grid grid-cols-2 gap-3">
-                  <select className="border border-(--secondary)/20 bg-white p-3 text-sm">
-                    <option>Select State</option>
+                  <select
+                    value={selectedState}
+                    onChange={(event) => handleStateChange(event.target.value)}
+                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
+                  >
+                    <option value="">Select State</option>
+
+                    {states.map((state) => (
+                      <option key={state.code} value={state.code}>
+                        {state.name}
+                      </option>
+                    ))}
                   </select>
 
-                  <select className="border border-(--secondary)/20 bg-white p-3 text-sm">
-                    <option>Select City</option>
+                  <select
+                    value={selectedDistrict}
+                    onChange={(event) =>
+                      setSelectedDistrict(event.target.value)
+                    }
+                    disabled={!selectedState}
+                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
+                  >
+                    <option value="">Select District</option>
+
+                    {districts.map((district) => (
+                      <option key={district} value={district}>
+                        {district}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-                  <select className="border border-(--secondary)/20 bg-white p-3 text-sm">
-                    <option>Select Discipline</option>
-                  </select>
+  <select
+    value={selectedDiscipline}
+    onChange={(event) =>
+      handleDisciplineChange(event.target.value)
+    }
+    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
+  >
+    <option value="">Select Discipline</option>
 
-                  <select className="border border-(--secondary)/20 bg-white p-3 text-sm">
-                    <option>Select Program</option>
-                  </select>
-                </div>
+    {disciplines.map((item) => (
+      <option
+        key={item.discipline}
+        value={item.discipline}
+      >
+        {item.discipline}
+      </option>
+    ))}
+  </select>
+
+  <select
+    value={selectedProgram}
+    onChange={(event) =>
+      setSelectedProgram(event.target.value)
+    }
+    disabled={!selectedDiscipline}
+    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
+  >
+    <option value="">Select Program</option>
+
+    {programs.map((program) => (
+      <option key={program} value={program}>
+        {program}
+      </option>
+    ))}
+  </select>
+</div>
 
                 <button className="w-full rounded bg-primary py-4 font-bold text-white transition hover:bg-secondary">
                   APPLY NOW
