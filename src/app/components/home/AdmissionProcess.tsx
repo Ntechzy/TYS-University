@@ -266,7 +266,7 @@ export default function AdmissionProcess() {
             className="absolute bottom-0 left-1/2 z-20 h-[88%] w-[88%] -translate-x-1/2"
           >
             <Image
-              src="/student/student-1.png"
+              src="/admission/student-1.png"
               alt="Student admission"
               fill
               className="object-contain object-bottom drop-shadow-2xl"

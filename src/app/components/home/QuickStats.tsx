@@ -126,23 +126,41 @@ export default function QuickStats() {
               key={index}
               variants={item}
               whileHover={{
-                y: -8,
-                scale: 1.03,
+                y: -10,
+                scale: 1.02,
               }}
-              transition={{ duration: 0.3 }}
-              className="group mx-auto flex aspect-square w-full max-w-[270px] flex-col items-center justify-center rounded-full border border-[color:var(--secondary)]/20 bg-[color:var(--background)] px-8 text-center transition-all duration-300 hover:border-[color:var(--primary)] hover:shadow-2xl"
+              transition={{ duration: 0.4 }}
+              className="group relative mx-auto flex aspect-square w-full max-w-[250px] flex-col items-center justify-center rounded-full bg-[color:var(--background)] text-center transition-all duration-500 hover:shadow-2xl sm:max-w-[260px] lg:max-w-[280px]"
             >
-              <h3 className="text-4xl font-extrabold leading-none md:text-5xl">
-                {stat.number}
-              </h3>
+              {/* Outer decorative ring */}
+              <div className="absolute inset-0 rounded-full border border-[color:var(--secondary)]/15 transition-all duration-500 group-hover:scale-[1.07] group-hover:border-[color:var(--primary)]" />
+              
+              {/* Inner dashed rotating ring */}
+              <div className="absolute inset-3 rounded-full border border-dashed border-[color:var(--secondary)]/25 transition-transform duration-700 ease-in-out group-hover:rotate-180 group-hover:border-[color:var(--primary)]/50" />
+              
+              {/* Soft inner glow on hover */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-[color:var(--secondary)]/[0.02] opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:to-[color:var(--primary)]/[0.08]" />
 
-              <p className="mt-8 text-xl font-bold leading-tight">
-                {stat.title}
-              </p>
+              {/* Content Container - Constrained width strictly prevents text from touching lines */}
+              <div className="relative z-10 flex w-[80%] flex-col items-center justify-center sm:w-[75%]">
+                <h3
+                  className={`font-extrabold leading-none transition-colors duration-300 group-hover:text-[color:var(--primary)] ${
+                    stat.number.length > 5
+                      ? "text-2xl sm:text-3xl lg:text-4xl"
+                      : "text-3xl sm:text-4xl md:text-5xl"
+                  }`}
+                >
+                  {stat.number}
+                </h3>
 
-              <p className="mt-2 text-lg leading-snug text-[color:var(--secondary)]/80">
-                {stat.desc}
-              </p>
+                <p className="mt-3 text-base font-bold leading-tight sm:mt-4 sm:text-lg md:mt-5">
+                  {stat.title}
+                </p>
+
+                <p className="mt-1.5 text-xs leading-snug text-[color:var(--secondary)]/80 sm:mt-2 sm:text-sm md:text-base">
+                  {stat.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

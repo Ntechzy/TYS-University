@@ -30,6 +30,13 @@ const legacyInstitutions = [
   { name: "Thakur Yugraj Singh College of Medical and Sciences", year: "2021" },
 ];
 
+const latestDevelopment = {
+  name: "Thakur Yugraj Singh University",
+  year: "2026",
+};
+
+const legacyTimelineItems = [...legacyInstitutions, latestDevelopment];
+
 const overviewPoints = [
   "Established in 2005 to expand quality higher education in Fatehpur.",
   "Offers undergraduate and postgraduate programs across arts, science, and commerce.",
@@ -320,7 +327,7 @@ export default function AboutUniversity() {
                 Legacy Institutions
               </p>
               <h2 className="mt-2 font-display text-xl font-black leading-tight sm:mt-3 sm:text-2xl md:text-3xl">
-                From the first campus to the newest college
+                From the first campus to the latest development
               </h2>
 
               <div className="mt-5 sm:mt-8">
@@ -357,8 +364,8 @@ export default function AboutUniversity() {
                       className="absolute bottom-[1.875rem] left-[1.875rem] top-[-0.75rem] w-px bg-linear-to-b from-[#D4A96A] via-[#D4A96A]/45 to-transparent sm:left-[2.375rem] sm:top-[-1.25rem]"
                     />
 
-                    {legacyInstitutions.map((item, i) => {
-                      const isLatest = i === legacyInstitutions.length - 1;
+                    {legacyTimelineItems.map((item, i) => {
+                      const isLatest = i === legacyTimelineItems.length - 1;
 
                       return (
                         <motion.div
@@ -448,11 +455,11 @@ export default function AboutUniversity() {
                   Legacy Institutions
                 </p>
                 <h2 className="mt-3 font-display text-4xl font-black leading-tight">
-                  From the first campus to the newest college
+                  From the first campus to the latest development
                 </h2>
               </div>
               <p className="max-w-112 text-sm leading-6 text-white/55">
-                The history of our university network, from the original institution to the latest addition.
+                The history of our university network, from the original institution to the latest development.
               </p>
             </div>
 
@@ -507,9 +514,6 @@ export default function AboutUniversity() {
                         />
                         <div className="grid grid-cols-5 gap-4 pt-10">
                           {legacyInstitutions.map((item, i) => {
-                            const isLatest =
-                              i === legacyInstitutions.length - 1;
-
                             return (
                               <motion.div
                                 key={item.name}
@@ -528,18 +532,10 @@ export default function AboutUniversity() {
                                   className="absolute left-1/2 top-[-2.5rem] h-10 w-px -translate-x-1/2 bg-[#D4A96A]/45"
                                 />
                                 <div
-                                  className={`min-h-50 rounded-2xl border px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 ${
-                                    isLatest
-                                      ? "border-[#D4A96A] bg-[#D4A96A]/16 shadow-xl shadow-[#D4A96A]/10"
-                                      : "border-white/10 bg-white/[0.045] hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
-                                  }`}
+                                  className="min-h-50 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
                                 >
                                   <span
-                                    className={`mx-auto flex h-10 w-10 items-center justify-center rounded-full border text-[11px] font-black tabular-nums ${
-                                      isLatest
-                                        ? "border-[#D4A96A] bg-[#D4A96A] text-[#0A0905]"
-                                        : "border-[#D4A96A]/35 bg-[#0A0905] text-[#D4A96A]"
-                                    }`}
+                                    className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#D4A96A]/35 bg-[#0A0905] text-[11px] font-black text-[#D4A96A] tabular-nums"
                                   >
                                     {String(i + 1).padStart(2, "0")}
                                   </span>
@@ -549,16 +545,45 @@ export default function AboutUniversity() {
                                   <p className="mt-3 text-sm font-semibold leading-snug text-white/82">
                                     {item.name}
                                   </p>
-                                  {isLatest && (
-                                    <p className="mt-4 rounded-full bg-[#D4A96A]/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#D4A96A]">
-                                      Latest college
-                                    </p>
-                                  )}
                                 </div>
                               </motion.div>
                             );
                           })}
                         </div>
+                      </div>
+
+                      <div className="relative flex justify-center pt-12">
+                        <span
+                          aria-hidden
+                          className="absolute left-1/2 top-0 h-12 w-px -translate-x-1/2 bg-[#D4A96A]/55"
+                        />
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={inView}
+                          transition={{
+                            duration: 0.5,
+                            delay: legacyInstitutions.length * 0.08,
+                            ease,
+                          }}
+                          className="relative w-full max-w-94 rounded-2xl border border-[#D4A96A] bg-[#D4A96A]/16 px-8 py-6 text-center shadow-xl shadow-[#D4A96A]/10 transition-all duration-300 hover:-translate-y-1"
+                        >
+                          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-[#D4A96A] bg-[#D4A96A] text-[11px] font-black text-[#0A0905] tabular-nums">
+                            {String(legacyTimelineItems.length).padStart(
+                              2,
+                              "0",
+                            )}
+                          </span>
+                          <p className="mt-4 text-[11px] font-black uppercase tracking-[0.18em] text-[#D4A96A] tabular-nums">
+                            {latestDevelopment.year}
+                          </p>
+                          <p className="mt-3 text-base font-black leading-snug text-white">
+                            {latestDevelopment.name}
+                          </p>
+                          <p className="mx-auto mt-4 inline-flex rounded-full bg-[#D4A96A]/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#D4A96A]">
+                            Latest development
+                          </p>
+                        </motion.div>
                       </div>
                     </div>
                   </div>
