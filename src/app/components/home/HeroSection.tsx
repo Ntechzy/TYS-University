@@ -86,7 +86,7 @@ export default function HeroSection() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const [selectedDiscipline, setSelectedDiscipline] = useState("");
-const [selectedProgram, setSelectedProgram] = useState("");
+  const [selectedProgram, setSelectedProgram] = useState("");
 
   const states = useMemo(() => getAllStates(), []);
   const districts = useMemo(
@@ -95,12 +95,11 @@ const [selectedProgram, setSelectedProgram] = useState("");
   );
 
   const programs = useMemo(
-  () =>
-    disciplines.find(
-      (item) => item.discipline === selectedDiscipline,
-    )?.programs ?? [],
-  [selectedDiscipline],
-);
+    () =>
+      disciplines.find((item) => item.discipline === selectedDiscipline)
+        ?.programs ?? [],
+    [selectedDiscipline],
+  );
 
   const handleStateChange = (stateCode: string) => {
     setSelectedState(stateCode);
@@ -108,9 +107,9 @@ const [selectedProgram, setSelectedProgram] = useState("");
   };
 
   const handleDisciplineChange = (discipline: string) => {
-  setSelectedDiscipline(discipline);
-  setSelectedProgram("");
-};
+    setSelectedDiscipline(discipline);
+    setSelectedProgram("");
+  };
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
@@ -143,8 +142,8 @@ const [selectedProgram, setSelectedProgram] = useState("");
             </h1>
 
             <p className="mb-8 max-w-130 text-base leading-relaxed text-white/85 sm:text-lg md:mb-10">
-              TYS University is focused on innovation, sustainability,
-              and academic excellence with world-class infrastructure.
+              TYS University is focused on innovation, sustainability, and
+              academic excellence with world-class infrastructure.
             </p>
 
             <button className="rounded bg-accent px-7 py-3 text-sm font-semibold text-foreground transition hover:bg-soft-background sm:px-10 sm:py-4 sm:text-base">
@@ -155,9 +154,7 @@ const [selectedProgram, setSelectedProgram] = useState("");
           <div className="hidden lg:block">
             <div className="w-107.5 rounded-md bg-soft-background p-8 shadow-2xl">
               <div className="text-center">
-                <p className="text-sm text-(--secondary)/80">
-                  APPLY TODAY FOR
-                </p>
+                <p className="text-sm text-(--secondary)/80">APPLY TODAY FOR</p>
 
                 <h3 className="mt-2 text-xl font-bold text-primary">
                   TYS UNIVERSITY
@@ -220,42 +217,37 @@ const [selectedProgram, setSelectedProgram] = useState("");
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-  <select
-    value={selectedDiscipline}
-    onChange={(event) =>
-      handleDisciplineChange(event.target.value)
-    }
-    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-  >
-    <option value="">Select Discipline</option>
+                  <select
+                    value={selectedDiscipline}
+                    onChange={(event) =>
+                      handleDisciplineChange(event.target.value)
+                    }
+                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
+                  >
+                    <option value="">Select Discipline</option>
 
-    {disciplines.map((item) => (
-      <option
-        key={item.discipline}
-        value={item.discipline}
-      >
-        {item.discipline}
-      </option>
-    ))}
-  </select>
+                    {disciplines.map((item) => (
+                      <option key={item.discipline} value={item.discipline}>
+                        {item.discipline}
+                      </option>
+                    ))}
+                  </select>
 
-  <select
-    value={selectedProgram}
-    onChange={(event) =>
-      setSelectedProgram(event.target.value)
-    }
-    disabled={!selectedDiscipline}
-    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
-  >
-    <option value="">Select Program</option>
+                  <select
+                    value={selectedProgram}
+                    onChange={(event) => setSelectedProgram(event.target.value)}
+                    disabled={!selectedDiscipline}
+                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
+                  >
+                    <option value="">Select Program</option>
 
-    {programs.map((program) => (
-      <option key={program} value={program}>
-        {program}
-      </option>
-    ))}
-  </select>
-</div>
+                    {programs.map((program) => (
+                      <option key={program} value={program}>
+                        {program}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
                 <button className="w-full rounded bg-primary py-4 font-bold text-white transition hover:bg-secondary">
                   APPLY NOW
