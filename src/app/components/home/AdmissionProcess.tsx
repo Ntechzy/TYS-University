@@ -64,7 +64,7 @@ const itemVariant: Variants = {
 
 export default function AdmissionProcess() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#F8F8F8] px-4 py-6 text-white md:px-8 lg:px-10">
+    <section id="apply" className="relative min-h-screen scroll-mt-36 overflow-hidden bg-[#F8F8F8] px-4 py-6 text-white md:px-8 lg:px-10">
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-0 top-0 h-105 w-105 rounded-full bg-[#5A1F22]/15 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-115 w-[460px] rounded-full bg-[#05498B]/20 blur-[110px]" />
@@ -122,7 +122,7 @@ export default function AdmissionProcess() {
               viewport={{ once: true, amount: 0.25 }}
               className="relative mt-8 grid max-h-[54vh] gap-3 overflow-y-auto pr-2 scrollbar-thin scrollbar-track-white/10 scrollbar-thumb-white/30 md:grid-cols-2 lg:max-h-none"
             >
-              {admissionSteps.map((step, index) => (
+              {admissionSteps.map((step) => (
                 <motion.div
                   key={step.number}
                   variants={itemVariant}

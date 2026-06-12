@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
+import ChatBot from "./components/ChatBot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );

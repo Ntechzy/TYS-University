@@ -2,82 +2,7 @@
 
 import { getAllStates, getDistricts } from "india-state-district";
 import { useEffect, useMemo, useState } from "react";
-
-const disciplines = [
-  {
-    discipline: "Faculty of Management",
-    programs: ["BBA", "MBA", "PhD"],
-  },
-  {
-    discipline: "Faculty of Engineering and Technology",
-    programs: ["B.Tech (CSE)", "B.Tech Honrs", "MTech", "B.Arch"],
-  },
-  {
-    discipline: "Faculty of Agriculture",
-    programs: [
-      "B.Sc (Honrs) Agriculture",
-      "M.Sc in Agriculture - Agronomy",
-      "M.Sc in Agriculture - Horticulture",
-      "M.Sc in Agriculture - Genetics and Plant Breeding",
-      "M.Sc in Agriculture - Soils Science and Soil Chemistry",
-      "M.Sc in Agriculture - Agriculture Extension",
-    ],
-  },
-  {
-    discipline: "Faculty of Arts",
-    programs: [
-      "BA",
-      "B.Lisc",
-      "M.Lisc",
-      "MA (Hindi)",
-      "MA (Urdu)",
-      "MA (English)",
-      "MA (Sanskrit)",
-      "MA (Political Science)",
-      "MA (Economics)",
-      "MA (Education)",
-      "MA (Home Science)",
-      "MA (Medieval and Modern History)",
-      "MA (Sociology)",
-      "BJMC",
-      "MJMC",
-      "MSW",
-    ],
-  },
-  {
-    discipline: "Faculty of Science",
-    programs: [
-      "B.Sc",
-      "M.Sc (Botany)",
-      "M.Sc (Chemistry)",
-      "M.Sc (Mathematics)",
-      "M.Sc (Physics)",
-      "M.Sc (Zoology)",
-      "BCA",
-      "MCA",
-    ],
-  },
-  {
-    discipline: "Faculty of Commerce",
-    programs: ["B.Com", "M.Com"],
-  },
-  {
-    discipline: "Faculty of Nursing",
-    programs: ["B.Sc Nursing", "GNM"],
-  },
-  {
-    discipline: "School of Pharmacy",
-    programs: ["D.Pharma", "B.Pharma"],
-  },
-  {
-    discipline: "Faculty of Law",
-    programs: ["BA LLB", "LLB", "LLM"],
-  },
-  {
-    discipline: "Yoga Course",
-    programs: ["PG Diploma in Yoga"],
-  },
-];
+import { disciplines } from "@/app/data/programs";
 
 const heroBanners = ["/hero/hero1.png", "/hero/hero2.png"];
 
@@ -119,6 +44,13 @@ export default function HeroSection() {
     return () => window.clearInterval(intervalId);
   }, []);
 
+  const scrollToApplicationForm = () => {
+    document.querySelector("#hero-application-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-background pt-16 md:pt-20">
       <section className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden md:h-auto">
@@ -146,13 +78,20 @@ export default function HeroSection() {
               academic excellence with world-class infrastructure.
             </p>
 
-            <button className="rounded bg-accent px-7 py-3 text-sm font-semibold text-foreground transition hover:bg-soft-background sm:px-10 sm:py-4 sm:text-base">
+            <button
+              type="button"
+              onClick={scrollToApplicationForm}
+              className="rounded bg-accent px-7 py-3 text-sm font-semibold text-foreground transition hover:bg-soft-background sm:px-10 sm:py-4 sm:text-base"
+            >
               APPLY TODAY →
             </button>
           </div>
 
           <div className="hidden lg:block">
-            <div className="w-107.5 rounded-md bg-soft-background p-8 shadow-2xl">
+            <div
+              id="hero-application-form"
+              className="w-107.5 scroll-mt-32 rounded-md bg-soft-background p-8 shadow-2xl"
+            >
               <div className="text-center">
                 <p className="text-sm text-(--secondary)/80">APPLY TODAY FOR</p>
 

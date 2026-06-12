@@ -100,12 +100,12 @@ export default function AboutUniversity() {
             viewport={inView}
           >
             {/* Adjusted clamp for better mobile scaling and added &nbsp; to prevent unwanted wrapping */}
-            <h1 className="flex flex-col font-display text-[clamp(2.75rem,9vw,6rem)] font-black leading-[0.9] tracking-tight text-[#0A0905]">
+            <h1 className="flex flex-col font-display text-[clamp(2.75rem,9vw,6rem)] font-black leading-[1.02] tracking-tight text-[#0A0905]">
               <span>Thakur</span>
-              <em className="ml-4 not-italic text-[#8B2C2C] sm:ml-6 md:ml-8 lg:ml-10">
+              <em className="not-italic text-[#8B2C2C]">
                 Yugraj&nbsp;Singh
               </em>
-              <span>University</span>
+              <span className="mt-[0.22em]">University</span>
             </h1>
           </motion.div>
 
