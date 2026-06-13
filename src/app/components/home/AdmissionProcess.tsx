@@ -266,7 +266,7 @@ export default function AdmissionProcess() {
             className="absolute bottom-0 left-1/2 z-20 h-[88%] w-[88%] -translate-x-1/2"
           >
             <Image
-              src="/admission/student-1.png"
+              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781323192/student-1_oidjua.png"
               alt="Student admission"
               fill
               className="object-contain object-bottom drop-shadow-2xl"
@@ -325,7 +325,7 @@ export default function AdmissionProcess() {
             className="absolute bottom-0 left-1/2 z-20 h-[88%] w-[90%] -translate-x-1/2"
           >
             <Image
-              src="/student/student-1.png"
+              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781323192/student-1_oidjua.png"
               alt="Student admission"
               fill
               className="object-contain object-bottom drop-shadow-2xl"

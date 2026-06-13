@@ -12,7 +12,7 @@ const faqs = [
     tag: "Campus Life",
     accent: "#E8F6FD",
     image:
-      "https://www.shutterstock.com/image-photo/group-indian-asian-college-students-600nw-2481344555.jpg",
+      "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/multicultural_campus_dzibl0.png",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const faqs = [
       "530+ partnerships with top-ranked universities worldwide. Dual-degree programs, joint research, and international faculty exchanges open doors globally.",
     tag: "Global",
     accent: "#F6C344",
-    image: "/images/faq/global.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320775/global_collaboration_adqr3y.png",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const faqs = [
       "Immersive language labs, cultural festivals, and dedicated international student support make transitioning to campus life seamless and enriching.",
     tag: "Culture",
     accent: "#5A1F22",
-    image: "/images/faq/culture.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/language_cultural_xkbyi7.png",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const faqs = [
       "Collaborate on funded research with faculty and peers across disciplines. Projects span 30+ countries and address real-world challenges.",
     tag: "Research",
     accent: "#05498B",
-    image: "/images/faq/research.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320775/international_research_project_yfzhkz.png",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const faqs = [
       "Learn from world-class professors representing over 40 nationalities. Their diverse expertise and global industry experience enrich every classroom.",
     tag: "Faculty",
     accent: "#E8F6FD",
-    image: "/images/faq/faculty.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320776/international_faculty_dcepjf.png",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const faqs = [
       "Our placement cell connects you with 500+ global employers. From internships to full-time offers, every student gets dedicated career coaching.",
     tag: "Careers",
     accent: "#F6C344",
-    image: "/images/faq/careers.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320775/career_pathways_gmnxtt.png",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const faqs = [
       "Merit-based scholarships, need-based aid, and flexible payment support help students from different backgrounds access a quality university education.",
     tag: "Scholarships",
     accent: "#05498B",
-    image: "/images/faq/scholarships.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320776/scholarship_bukj1q.png",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const faqs = [
       "Smart classrooms, advanced labs, collaborative studios, and digital libraries give students the tools they need for hands-on and future-ready learning.",
     tag: "Facilities",
     accent: "#E8F6FD",
-    image: "/images/faq/facilities.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320776/modern_learning_spaces_tj6tqo.png",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const faqs = [
       "From technical societies to cultural clubs and sports events, students can build leadership skills, friendships, and strong campus memories beyond academics.",
     tag: "Student Life",
     accent: "#F6C344",
-    image: "/images/faq/student-life.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/student_clubs_ajr7q8.png",
   },
   {
     id: 10,
@@ -93,7 +93,7 @@ const faqs = [
       "Safe, comfortable accommodation options with round-the-clock support, study areas, and community spaces make campus living simple and welcoming.",
     tag: "Accommodation",
     accent: "#5A1F22",
-    image: "/images/faq/hostel.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/hostel_accomodation_d6ukfj.png",
   },
   {
     id: 11,
@@ -102,7 +102,7 @@ const faqs = [
       "Students benefit from expert talks, live projects, industrial visits, and internship programs that connect classroom learning with real professional practice.",
     tag: "Industry",
     accent: "#05498B",
-    image: "/images/faq/industry.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/industry_visits_iom91p.png",
   },
   {
     id: 12,
@@ -111,7 +111,7 @@ const faqs = [
       "Our admissions team supports applicants at every step, from program selection and documentation to counseling, deadlines, and final enrollment.",
     tag: "Admissions",
     accent: "#E8F6FD",
-    image: "/images/faq/admissions.jpg",
+    image: "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781320774/admissions_guidance_hdaslz.png",
   },
 ];
 
@@ -146,6 +146,7 @@ export default function FAQSection() {
             <motion.button
               key={faq.id}
               type="button"
+              aria-expanded={isActive}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, duration: 0.35 }}
@@ -182,10 +183,16 @@ export default function FAQSection() {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-[color:var(--secondary)]/10 px-5 pb-5 pt-4">
-                      <p className="text-sm leading-relaxed text-[color:var(--foreground)]/80">
-                        {faq.answer}
-                      </p>
+                    <div className="border-t border-[color:var(--secondary)]/10">
+                      <div
+                        className="aspect-video w-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${faq.image})` }}
+                      />
+                      <div className="px-5 pb-5 pt-4">
+                        <p className="text-sm leading-relaxed text-[color:var(--foreground)]/80">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -198,7 +205,7 @@ export default function FAQSection() {
       <div className="mx-auto hidden max-w-7xl md:block">
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto pb-6 scrollbar-hide xl:justify-center"
+          className="flex gap-3 overflow-x-auto pb-6 scrollbar-hide"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {faqs.map((faq, index) => {
@@ -216,24 +223,31 @@ export default function FAQSection() {
                   y: { delay: index * 0.07, duration: 0.5 },
                 }}
                 onClick={() => setActiveId(isActive ? null : faq.id)}
-                className="group relative flex-shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-[color:var(--secondary)]/12"
+                className="group relative min-w-0 cursor-pointer overflow-hidden rounded-2xl border border-[color:var(--secondary)]/12"
                 style={{
-                  width: isActive ? "520px" : "72px",
+                  flexBasis: 0,
+                  flexGrow: isActive ? 7 : 1,
+                  flexShrink: 1,
                   minHeight: "480px",
                   backgroundColor: "var(--primary)",
                   scrollSnapAlign: "center",
-                  transition: "width 0.5s cubic-bezier(0.22,1,0.36,1)",
+                  transition: "flex-grow 0.5s cubic-bezier(0.22,1,0.36,1)",
                 }}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                  style={{
-                    backgroundImage: `url(${faq.image})`,
-                    background: faq.image
-                      ? `url(${faq.image}) center/cover no-repeat`
-                      : `linear-gradient(135deg, ${faq.accent}cc, var(--primary))`,
-                  }}
-                />
+                {isActive && (
+                  <motion.div
+                    key="image"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      background: faq.image
+                        ? `url(${faq.image}) center/cover no-repeat`
+                        : `linear-gradient(135deg, ${faq.accent}cc, var(--primary))`,
+                    }}
+                  />
+                )}
 
                 <div
                   className="absolute inset-0"

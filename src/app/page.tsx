@@ -5,6 +5,8 @@ import QuickStats from './components/home/QuickStats';
 import AdmissionProcess from './components/home/AdmissionProcess';
 import WhyChooseUs from './components/home/WhyChooseUs';
 import AboutUniversity from './components/home/AboutUniversity';
+import GallerySection from './components/home/GallerySection';
+import ApplyNowBell from './components/home/ApplyNowBell';
 
 export default function Home() {
   return (
@@ -16,8 +18,10 @@ export default function Home() {
       />
       <WhyChooseUs/>
       <QuickStats/>
+      <GallerySection/>
       <AdmissionProcess/>
-            <FAQSection/>
+      <FAQSection/>
+      <ApplyNowBell />
     </>
   );
 }

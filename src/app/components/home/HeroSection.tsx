@@ -4,7 +4,7 @@ import { getAllStates, getDistricts } from "india-state-district";
 import { useEffect, useMemo, useState } from "react";
 import { disciplines } from "@/app/data/programs";
 
-const heroBanners = ["/hero/hero1.png", "/hero/hero2.png"];
+const heroBanners = ["https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322387/hero1_o9mi9w.png", "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322396/hero2_koqck1.png"];
 
 export default function HeroSection() {
   const [activeBanner, setActiveBanner] = useState(0);

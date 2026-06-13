@@ -133,7 +133,7 @@ export default function AboutUniversity() {
               <footer className="mt-5 flex items-center gap-4 md:mt-6">
                 <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full ring-2 ring-[#D4A96A]/40 md:h-14 md:w-14">
                   <Image
-                    src="/about/chancellor.png"
+                    src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322513/chancellor_l5obd5.png"
                     alt="Founder and Chancellor"
                     fill
                     className="object-cover"
@@ -200,7 +200,7 @@ export default function AboutUniversity() {
             className="relative min-h-120 overflow-hidden rounded-3xl lg:col-span-5 lg:row-span-2"
           >
             <Image
-              src="/about/student-college.png"
+              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322547/student-college_fnc9zm.png"
               alt="Students at TYSU"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -233,7 +233,7 @@ export default function AboutUniversity() {
             className="relative min-h-55 overflow-hidden rounded-3xl lg:col-span-3"
           >
             <Image
-              src="/about/college-1.png"
+              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322546/college-1_r7wvxl.png"
               alt="TYSU Campus"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
@@ -257,7 +257,7 @@ export default function AboutUniversity() {
             className="relative min-h-55 overflow-hidden rounded-3xl lg:col-span-3"
           >
             <Image
-              src="/about/classroom.png"
+              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322547/classroom_g4lpuv.png"
               alt="Smart Classroom"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
