@@ -15,6 +15,7 @@ import {
   type Program,
   type ProgramCategory,
 } from "@/app/data/programs";
+import SectionHeading from "@/app/components/shared/SectionHeading";
 
 type CategoryFilter = ProgramCategory | "All";
 
@@ -143,29 +144,17 @@ export default function ProgramsDirectory() {
   );
 
   return (
-    <>
     <main className="bg-[#f7f3ee] pt-34 text-foreground md:pt-41">
       <section className="border-b border-black/8 bg-[radial-gradient(circle_at_top_left,rgba(246,195,68,0.2),transparent_34%),linear-gradient(180deg,#f7f3ee_0%,#fdfbf8_100%)]">
         <div className="mx-auto max-w-480 px-5 pb-14 pt-7 sm:px-8 lg:px-10">
-          <div className="flex flex-wrap items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-primary/70">
-            <span className="rounded-full border border-primary/15 bg-white/80 px-3 py-1">
-              TYS University
-            </span>
-            <span className="rounded-full border border-primary/15 bg-white/80 px-3 py-1">
-              Programs Directory
-            </span>
-          </div>
-
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <div>
-              <h1 className="max-w-3xl font-display text-4xl font-black uppercase leading-[0.98] text-[#431417] sm:text-5xl lg:text-6xl">
-                Explore Programmes Across Every Faculty
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-black/70 sm:text-lg">
-                Search brochure-listed programs by level, faculty, eligibility,
-                and specialization. This directory is built directly from the
-                TYS brochure you shared.
-              </p>
+            <div className="-mx-6 -my-6">
+              <SectionHeading
+                tagline="Programs"
+                highlightText="Programs & Fee Structure"
+                mainText="Choose the right path across every faculty"
+                description="Browse undergraduate, postgraduate, diploma, and doctoral offerings by faculty, eligibility, and duration."
+              />
             </div>
 
             <div className="grid gap-4 rounded-[2rem] border border-black/8 bg-white/88 p-5 shadow-[0_18px_60px_rgba(40,20,10,0.08)] backdrop-blur">
@@ -401,6 +390,5 @@ export default function ProgramsDirectory() {
         </div>
       </section>
     </main>
-    </>
   );
 }

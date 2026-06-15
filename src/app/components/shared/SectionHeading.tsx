@@ -25,9 +25,9 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-start pt-2 flex-shrink-0 min-w-[160px]"
+          className="flex flex-col items-start pt-2 shrink-0 min-w-40"
         >
-          <span className="text-xs font-black tracking-[0.25em] text-neutral-900 uppercase">
+          <span className="text-s font-black tracking-[0.25em] text-neutral-900 uppercase">
             {tagline}
           </span>
           {/* Custom SVG Double-Stroke Accent Line */}

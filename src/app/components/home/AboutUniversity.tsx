@@ -233,7 +233,7 @@ export default function AboutUniversity() {
             className="relative min-h-55 overflow-hidden rounded-3xl lg:col-span-3"
           >
             <Image
-              src="https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322546/college-1_r7wvxl.png"
+              src="/hero/hero-night.webp"
               alt="TYSU Campus"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
