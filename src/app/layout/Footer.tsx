@@ -1,14 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Globe2,
   Mail,
   MapPin,
   Phone,
   Send,
-  Share2,
-  Video,
 } from "lucide-react";
+import type { SVGProps } from "react";
+
+type SocialIconProps = SVGProps<SVGSVGElement>;
+
+function FacebookIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M13.5 22v-9h3l.45-3.5H13.5V7.27c0-1.01.28-1.7 1.73-1.7H17V2.44A23.8 23.8 0 0 0 14.42 2C11.86 2 10 3.56 10 6.43V9.5H7V13h3v9h3.5Z" />
+    </svg>
+  );
+}
+
+function InstagramIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" />
+    </svg>
+  );
+}
+
+function LinkedInIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M6.5 8.25H3V21h3.5V8.25ZM4.75 3A2.05 2.05 0 1 0 4.75 7.1 2.05 2.05 0 0 0 4.75 3ZM21 13.69c0-3.84-2.05-5.63-4.79-5.63a4.13 4.13 0 0 0-3.74 2.06h-.05V8.25H9.06V21h3.5v-6.31c0-1.66.31-3.27 2.37-3.27 2.03 0 2.06 1.9 2.06 3.38V21H21v-7.31Z" />
+    </svg>
+  );
+}
+
+function YouTubeIcon(props: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M21.58 7.19a2.7 2.7 0 0 0-1.9-1.91C18 4.83 12 4.83 12 4.83s-6 0-7.68.45a2.7 2.7 0 0 0-1.9 1.91A28.1 28.1 0 0 0 2 12a28.1 28.1 0 0 0 .42 4.81 2.7 2.7 0 0 0 1.9 1.91c1.68.45 7.68.45 7.68.45s6 0 7.68-.45a2.7 2.7 0 0 0 1.9-1.91A28.1 28.1 0 0 0 22 12a28.1 28.1 0 0 0-.42-4.81ZM10 15.1V8.9l5.2 3.1-5.2 3.1Z" />
+    </svg>
+  );
+}
 
 const quickLinks = [
   { label: "About University", href: "#about" },
@@ -38,10 +72,10 @@ const featuredUpdates = [
 ];
 
 const socialLinks = [
-  { label: "Fb", href: "https://www.facebook.com/", icon: Share2 },
-  { label: "Ig", href: "https://www.instagram.com/", icon: Globe2 },
-  { label: "In", href: "https://www.linkedin.com/", icon: Share2 },
-  { label: "Yt", href: "https://www.youtube.com/", icon: Video },
+  { label: "Facebook", href: "https://www.facebook.com/", icon: FacebookIcon },
+  { label: "Instagram", href: "https://www.instagram.com/", icon: InstagramIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: LinkedInIcon },
+  { label: "YouTube", href: "https://www.youtube.com/", icon: YouTubeIcon },
 ];
 
 export default function Footer() {
@@ -120,7 +154,7 @@ export default function Footer() {
                     aria-label={item.label}
                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition hover:border-[#f6c344]/40 hover:text-[#f6c344]"
                   >
-                    <Icon size={16} />
+                    <Icon className="h-4 w-4" />
                   </a>
                 );
               })}
@@ -221,19 +255,32 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 bg-white/4 px-5 py-5 text-sm text-white/55 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <p>&copy; {year} TYS University. All rights reserved.</p>
-          <div className="flex flex-wrap gap-5">
-            <a href="#privacy" className="transition hover:text-white">
-              Privacy policy
-            </a>
-            <a href="#legal" className="transition hover:text-white">
-              Legal notice
-            </a>
-            <a href="#terms" className="transition hover:text-white">
-              Terms of service
-            </a>
-          </div>
-        </div>
+  <p>&copy; {year} TYS University. All rights reserved.</p>
+  
+  <p className="text-white/55 lg:text-center">
+    Developed &amp; Managed by{" "}
+    <a 
+      href="https://ntechzy.in" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="font-medium text-white transition-colors hover:text-[#f6c344] hover:underline"
+    >
+      Ntechzy
+    </a>
+  </p>
+
+  <div className="flex flex-wrap gap-5">
+    <a href="#privacy" className="transition hover:text-white">
+      Privacy policy
+    </a>
+    <a href="#legal" className="transition hover:text-white">
+      Legal notice
+    </a>
+    <a href="#terms" className="transition hover:text-white">
+      Terms of service
+    </a>
+  </div>
+</div>
       </div>
     </footer>
   );

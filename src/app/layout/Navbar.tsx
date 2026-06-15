@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const announcements = [
-  "Register Now for TYSU Joint Campus Placement Programme",
+  "Register Now for admission in TYSU",
   "Admissions open for the 2026 academic session",
   "Explore programs, scholarships, placements, and campus life",
 ];
