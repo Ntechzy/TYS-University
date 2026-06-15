@@ -143,6 +143,7 @@ export default function ProgramsDirectory() {
   );
 
   return (
+    <>
     <main className="bg-[#f7f3ee] pt-34 text-foreground md:pt-41">
       <section className="border-b border-black/8 bg-[radial-gradient(circle_at_top_left,rgba(246,195,68,0.2),transparent_34%),linear-gradient(180deg,#f7f3ee_0%,#fdfbf8_100%)]">
         <div className="mx-auto max-w-480 px-5 pb-14 pt-7 sm:px-8 lg:px-10">
@@ -400,5 +401,6 @@ export default function ProgramsDirectory() {
         </div>
       </section>
     </main>
+    </>
   );
 }
