@@ -47,7 +47,7 @@ function YouTubeIcon(props: SocialIconProps) {
 const quickLinks = [
   { label: "About University", href: "#about" },
   { label: "Admissions", href: "#apply" },
-  { label: "Programs", href: "#programs" },
+  { label: "Programs", href: "/programs" },
   { label: "Campus Life", href: "#campus-life" },
 ];
 

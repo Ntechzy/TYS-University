@@ -26,7 +26,24 @@ const utilityLinks = [
   { label: "CONTACT US", href: "#contact" },
 ];
 
-const navItems = [
+type NavItem =
+  | {
+      label: string;
+      href: string;
+    }
+  | {
+      label: string;
+      links: Array<{
+        label: string;
+        href: string;
+      }>;
+    };
+
+const navItems: NavItem[] = [
+  {
+    label: "HOME",
+    href: "/",
+  },
   {
     label: "ABOUT",
     links: [
@@ -38,9 +55,11 @@ const navItems = [
   {
     label: "PROGRAMS",
     links: [
-      { label: "Undergraduate Programs", href: "#undergraduate" },
-      { label: "Postgraduate Programs", href: "#postgraduate" },
-      { label: "Doctoral Programs", href: "#doctoral" },
+      { label: "All Programs", href: "/programs" },
+      { label: "Undergraduate Programs", href: "/programs#undergraduate" },
+      { label: "Postgraduate Programs", href: "/programs#postgraduate" },
+      { label: "Doctoral Programs", href: "/programs#doctoral" },
+      { label: "Diploma Programs", href: "/programs#diploma" },
     ],
   },
   {
@@ -101,7 +120,10 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const activeNav = navItems.find((item) => item.label === activeMenu);
+  const activeNav = navItems.find(
+    (item): item is Extract<NavItem, { links: { label: string; href: string }[] }> =>
+      item.label === activeMenu && "links" in item,
+  );
   const announcement = announcements[announcementIndex];
 
   useEffect(() => {
@@ -325,24 +347,36 @@ export default function Navbar() {
                 key={item.label}
                 className="flex h-full shrink-0 items-center border-r border-white/20"
               >
-                <button
-                  type="button"
-                  aria-expanded={isActive}
-                className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-accent lg:px-6 lg:text-sm ${
-                  isScrolled ? "text-black" : "text-white"
-                }`}
-                  onClick={() =>
-                    setActiveMenu((current) =>
-                      current === item.label ? null : item.label,
-                    )
-                  }
-                >
-                  {item.label}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform ${isActive ? "rotate-180" : ""}`}
-                  />
-                </button>
+                {"href" in item ? (
+                  <Link
+                    href={item.href}
+                    className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-accent lg:px-6 lg:text-sm ${
+                      isScrolled ? "text-black" : "text-white"
+                    }`}
+                    onClick={closeMenus}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    aria-expanded={isActive}
+                    className={`flex h-full items-center gap-1.5 px-4 text-xs font-bold tracking-[1px] transition-colors hover:text-accent lg:px-6 lg:text-sm ${
+                      isScrolled ? "text-black" : "text-white"
+                    }`}
+                    onClick={() =>
+                      setActiveMenu((current) =>
+                        current === item.label ? null : item.label,
+                      )
+                    }
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${isActive ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                )}
               </div>
             );
           })}
@@ -426,23 +460,34 @@ export default function Navbar() {
 
           <div className="mt-5 grid gap-2">
             {navItems.map((item) => (
-              <details key={item.label} className="rounded border border-white/10">
-                <summary className="cursor-pointer px-4 py-3 text-sm font-bold">
+              "href" in item ? (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="rounded border border-white/10 px-4 py-3 text-sm font-bold transition hover:border-accent"
+                  onClick={closeMenus}
+                >
                   {item.label}
-                </summary>
-                <div className="grid gap-1 border-t border-black/10 bg-black/3 p-2">
-                  {item.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      className="rounded px-3 py-2 text-sm text-black/80 transition hover:bg-black/5 hover:text-black"
-                      onClick={closeMenus}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </details>
+                </Link>
+              ) : (
+                <details key={item.label} className="rounded border border-white/10">
+                  <summary className="cursor-pointer px-4 py-3 text-sm font-bold">
+                    {item.label}
+                  </summary>
+                  <div className="grid gap-1 border-t border-black/10 bg-black/3 p-2">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        className="rounded px-3 py-2 text-sm text-black/80 transition hover:bg-black/5 hover:text-black"
+                        onClick={closeMenus}
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </details>
+              )
             ))}
           </div>
 
