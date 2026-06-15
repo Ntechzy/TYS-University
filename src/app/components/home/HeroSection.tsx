@@ -69,7 +69,7 @@ export default function HeroSection() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-350 items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
           <div className="w-full max-w-155 text-white">
-            <h1 className="mb-5 text-4xl font-bold leading-tight sm:text-5xl md:mb-8 md:text-6xl">
+            <h1 className="mb-5 text-4xl font-medium leading-tight sm:text-5xl md:mb-8 md:text-6xl">
               Best Private University in UP
             </h1>
 
@@ -87,113 +87,111 @@ export default function HeroSection() {
             </button>
           </div>
 
-          <div className="hidden lg:block">
-            <div
-              id="hero-application-form"
-              className="w-107.5 scroll-mt-32 rounded-md bg-soft-background p-8 shadow-2xl"
-            >
-              <div className="text-center">
-                <p className="text-sm text-(--secondary)/80">APPLY TODAY FOR</p>
+        <div className="hidden lg:block">
+  <div
+    id="hero-application-form"
+    className="w-107.5 scroll-mt-32 rounded-xl border border-white/30 bg-white/20 p-8 shadow-2xl backdrop-blur-xl"
+  >
+    <div className="text-center">
+      <p className="text-sm text-(--secondary)/80">APPLY TODAY FOR</p>
 
-                <h3 className="mt-2 text-xl font-bold text-primary">
-                  TYS UNIVERSITY
-                </h3>
+      <h3 className="mt-2 text-xl font-bold text-primary">
+        TYS UNIVERSITY
+      </h3>
 
-                <p className="mt-1 font-semibold text-(--foreground)/70">
-                  INDIA
-                </p>
-              </div>
+      <p className="mt-1 font-semibold text-(--foreground)/70">
+        INDIA
+      </p>
+    </div>
 
-              <div className="mt-6 space-y-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <input
-                    placeholder="Student Name"
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-                  />
+    <div className="mt-6 space-y-4">
+      <div className="grid grid-cols-2 gap-3">
+        <input
+          placeholder="Student Name"
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+        />
 
-                  <input
-                    placeholder="Student Email"
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-                  />
-                </div>
+        <input
+          placeholder="Student Email"
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+        />
+      </div>
 
-                <input
-                  placeholder="Mobile Number"
-                  className="w-full border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-                />
+      <input
+        placeholder="Mobile Number"
+        className="w-full border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+      />
 
-                <div className="grid grid-cols-2 gap-3">
-                  <select
-                    value={selectedState}
-                    onChange={(event) => handleStateChange(event.target.value)}
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-                  >
-                    <option value="">Select State</option>
+      <div className="grid grid-cols-2 gap-3">
+        <select
+          value={selectedState}
+          onChange={(event) => handleStateChange(event.target.value)}
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+        >
+          <option value="">Select State</option>
 
-                    {states.map((state) => (
-                      <option key={state.code} value={state.code}>
-                        {state.name}
-                      </option>
-                    ))}
-                  </select>
+          {states.map((state) => (
+            <option key={state.code} value={state.code}>
+              {state.name}
+            </option>
+          ))}
+        </select>
 
-                  <select
-                    value={selectedDistrict}
-                    onChange={(event) =>
-                      setSelectedDistrict(event.target.value)
-                    }
-                    disabled={!selectedState}
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
-                  >
-                    <option value="">Select District</option>
+        <select
+          value={selectedDistrict}
+          onChange={(event) => setSelectedDistrict(event.target.value)}
+          disabled={!selectedState}
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-(--foreground)/40"
+        >
+          <option value="">Select District</option>
 
-                    {districts.map((district) => (
-                      <option key={district} value={district}>
-                        {district}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+          {districts.map((district) => (
+            <option key={district} value={district}>
+              {district}
+            </option>
+          ))}
+        </select>
+      </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <select
-                    value={selectedDiscipline}
-                    onChange={(event) =>
-                      handleDisciplineChange(event.target.value)
-                    }
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary"
-                  >
-                    <option value="">Select Discipline</option>
+      <div className="grid grid-cols-2 gap-3">
+        <select
+          value={selectedDiscipline}
+          onChange={(event) =>
+            handleDisciplineChange(event.target.value)
+          }
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+        >
+          <option value="">Select Discipline</option>
 
-                    {disciplines.map((item) => (
-                      <option key={item.discipline} value={item.discipline}>
-                        {item.discipline}
-                      </option>
-                    ))}
-                  </select>
+          {disciplines.map((item) => (
+            <option key={item.discipline} value={item.discipline}>
+              {item.discipline}
+            </option>
+          ))}
+        </select>
 
-                  <select
-                    value={selectedProgram}
-                    onChange={(event) => setSelectedProgram(event.target.value)}
-                    disabled={!selectedDiscipline}
-                    className="border border-(--secondary)/20 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/60 disabled:text-(--foreground)/40"
-                  >
-                    <option value="">Select Program</option>
+        <select
+          value={selectedProgram}
+          onChange={(event) => setSelectedProgram(event.target.value)}
+          disabled={!selectedDiscipline}
+          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-(--foreground)/40"
+        >
+          <option value="">Select Program</option>
 
-                    {programs.map((program) => (
-                      <option key={program} value={program}>
-                        {program}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+          {programs.map((program) => (
+            <option key={program} value={program}>
+              {program}
+            </option>
+          ))}
+        </select>
+      </div>
 
-                <button className="w-full rounded bg-primary py-4 font-bold text-white transition hover:bg-secondary">
-                  APPLY NOW
-                </button>
-              </div>
-            </div>
-          </div>
+      <button className="w-full rounded bg-primary py-4 font-bold text-white transition hover:bg-secondary">
+        APPLY NOW
+      </button>
+    </div>
+  </div>
+</div>
         </div>
 
         <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2 md:bottom-10">
