@@ -581,7 +581,7 @@ export default function AboutUniversity() {
                             {latestDevelopment.name}
                           </p>
                           <p className="mx-auto mt-4 inline-flex rounded-full bg-[#D4A96A]/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#D4A96A]">
-                            Latest development
+                            University Establishment
                           </p>
                         </motion.div>
                       </div>

@@ -38,9 +38,11 @@ const navItems = [
   {
     label: "PROGRAMS",
     links: [
-      { label: "Undergraduate Programs", href: "#undergraduate" },
-      { label: "Postgraduate Programs", href: "#postgraduate" },
-      { label: "Doctoral Programs", href: "#doctoral" },
+      { label: "All Programs", href: "/programs" },
+      { label: "Undergraduate Programs", href: "/programs#undergraduate" },
+      { label: "Postgraduate Programs", href: "/programs#postgraduate" },
+      { label: "Doctoral Programs", href: "/programs#doctoral" },
+      { label: "Diploma Programs", href: "/programs#diploma" },
     ],
   },
   {
