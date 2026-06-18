@@ -14,10 +14,31 @@ import {
   X,
 } from "lucide-react";
 
+const tollFreeNumber = "18008901705";
+const tollFreeDisplay = "1800 890 1705";
+
 const announcements = [
-  "Register Now for admission in TYSU",
-  "Admissions open for the 2026 academic session",
-  "Explore programs, scholarships, placements, and campus life",
+  {
+    text: "Register Now for admission in TYSU",
+    href: "#apply",
+    cta: "REGISTER NOW",
+  },
+  {
+    text: "Admissions open for the 2026 academic session",
+    href: "#apply",
+    cta: "REGISTER NOW",
+  },
+  {
+    text: "Explore programs, scholarships, placements, and campus life",
+    href: "#apply",
+    cta: "REGISTER NOW",
+  },
+  {
+    text: `Toll Free Admission Helpline: ${tollFreeDisplay}`,
+    href: `tel:${tollFreeNumber}`,
+    cta: "CALL NOW",
+    ariaLabel: `Call toll free admission helpline ${tollFreeDisplay}`,
+  },
 ];
 
 const utilityLinks = [
@@ -184,14 +205,15 @@ export default function Navbar() {
 
           <div className="flex flex-1 flex-col items-center justify-center gap-1.5 text-center text-white sm:flex-row sm:gap-4">
             <span className="text-[10px] font-medium leading-tight text-white sm:text-xs">
-              {announcement}
+              {announcement.text}
             </span>
 
             <a
-              href="#apply"
+              href={announcement.href}
+              aria-label={announcement.ariaLabel}
               className="shrink-0 rounded bg-accent px-3 py-1 text-[9px] font-bold tracking-wide text-foreground transition hover:bg-soft-background sm:text-[10px]"
             >
-              REGISTER NOW
+              {announcement.cta}
             </a>
           </div>
 
@@ -270,8 +292,8 @@ export default function Navbar() {
                 Whatsapp
               </a>
               <a
-                href="tel:1800121288800"
-                aria-label="Call admission helpline"
+                href={`tel:${tollFreeNumber}`}
+                aria-label={`Call toll free admission helpline ${tollFreeDisplay}`}
                 className="transition-colors hover:text-accent"
               >
                 <Phone size={14} />
@@ -291,7 +313,8 @@ export default function Navbar() {
             </div>
 
             <a
-              href="tel:1800121288800"
+              href={`tel:${tollFreeNumber}`}
+              aria-label={`Call toll free admission helpline ${tollFreeDisplay}`}
               className="hidden h-12 items-center justify-between rounded bg-primary px-4 text-white transition hover:bg-accent hover:text-foreground lg:flex"
             >
               <span className="flex items-center gap-3">
@@ -299,9 +322,9 @@ export default function Navbar() {
                   <Phone size={14} />
                 </span>
                 <span>
-                  <span className="block text-[10px]">Admission Helpline</span>
+                  <span className="block text-[10px]">Toll Free Helpline</span>
                   <span className="block text-sm font-extrabold leading-tight">
-                    1800121288800
+                    {tollFreeDisplay}
                   </span>
                 </span>
               </span>
@@ -450,11 +473,11 @@ export default function Navbar() {
               Apply Now
             </a>
             <a
-              href="tel:1800121288800"
+              href={`tel:${tollFreeNumber}`}
               className="rounded border border-white/15 px-4 py-3 text-center text-sm font-bold transition hover:border-accent"
               onClick={closeMenus}
             >
-              Call Admission Helpline
+              Call Toll Free Helpline
             </a>
           </div>
 
