@@ -69,7 +69,10 @@ export default function HeroSection() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-350 items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
           <div className="w-full max-w-155 text-white">
-            <h1 className="mb-5 text-4xl font-medium leading-tight sm:text-5xl md:mb-8 md:text-6xl">
+            <h1
+              className="mb-5 max-w-full break-words text-4xl font-medium uppercase leading-tight tracking-[0.08em] sm:text-5xl sm:tracking-[0.1em] md:mb-8 md:text-6xl md:tracking-[0.12em]"
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
               Best Private University in UP
             </h1>
 
