@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://tysuniversity.com";
+import { siteUrl } from "./lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-    },
-    host: siteUrl,
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/_next/", "/api/"],
+      },
+    ],
     sitemap: `${siteUrl}/sitemap.xml`,
   };
 }
