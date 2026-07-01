@@ -69,7 +69,10 @@ export default function HeroSection() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-350 items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
           <div className="w-full max-w-155 text-white">
-            <h1 className="mb-5 text-4xl font-medium leading-tight sm:text-5xl md:mb-8 md:text-6xl">
+            <h1
+              className="mb-5 max-w-full wrap-break-word text-4xl font-semibold uppercase leading-tight tracking-[0.08em] sm:text-5xl sm:tracking-widest md:mb-8 md:text-6xl md:tracking-[0.12em]"
+              style={{ fontFamily: '"Poppins", Times, serif' }}
+            >
               Best Private University in UP
             </h1>
 
@@ -90,7 +93,7 @@ export default function HeroSection() {
         <div className="hidden lg:block">
   <div
     id="hero-application-form"
-    className="w-107.5 scroll-mt-32 rounded-xl border border-white/30 bg-white/20 p-8 shadow-2xl backdrop-blur-xl"
+    className="w-107.5 scroll-mt-32 rounded-xl border border-black/10 bg-white p-8 shadow-2xl"
   >
     <div className="text-center">
       <p className="text-sm text-(--secondary)/80">APPLY TODAY FOR</p>
@@ -108,25 +111,25 @@ export default function HeroSection() {
       <div className="grid grid-cols-2 gap-3">
         <input
           placeholder="Student Name"
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary"
         />
 
         <input
           placeholder="Student Email"
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary"
         />
       </div>
 
       <input
         placeholder="Mobile Number"
-        className="w-full border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+        className="w-full border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary"
       />
 
       <div className="grid grid-cols-2 gap-3">
         <select
           value={selectedState}
           onChange={(event) => handleStateChange(event.target.value)}
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary"
         >
           <option value="">Select State</option>
 
@@ -141,7 +144,7 @@ export default function HeroSection() {
           value={selectedDistrict}
           onChange={(event) => setSelectedDistrict(event.target.value)}
           disabled={!selectedState}
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-(--foreground)/40"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-black/5 disabled:text-(--foreground)/40"
         >
           <option value="">Select District</option>
 
@@ -159,7 +162,7 @@ export default function HeroSection() {
           onChange={(event) =>
             handleDisciplineChange(event.target.value)
           }
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary"
         >
           <option value="">Select Discipline</option>
 
@@ -174,7 +177,7 @@ export default function HeroSection() {
           value={selectedProgram}
           onChange={(event) => setSelectedProgram(event.target.value)}
           disabled={!selectedDiscipline}
-          className="border border-white/30 bg-white/80 p-3 text-sm outline-none backdrop-blur-md focus:border-secondary disabled:cursor-not-allowed disabled:bg-white/50 disabled:text-(--foreground)/40"
+          className="border border-black/10 bg-white p-3 text-sm outline-none focus:border-secondary disabled:cursor-not-allowed disabled:bg-black/5 disabled:text-(--foreground)/40"
         >
           <option value="">Select Program</option>
 

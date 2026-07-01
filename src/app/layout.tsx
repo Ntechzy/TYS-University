@@ -4,11 +4,19 @@ import "./globals.css";
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import ChatBot from "./components/ChatBot";
-
-const siteUrl = "https://tysuniversity.com";
-const siteName = "TYS University";
-const siteDescription =
-  "TYS University is a private university in Fatehpur, Uttar Pradesh, offering undergraduate and postgraduate education with a student-focused campus, admissions support, and modern learning spaces.";
+import {
+  JsonLd,
+  campusAddress,
+  contactEmail,
+  siteDescription,
+  siteLanguage,
+  siteLocale,
+  siteLogo,
+  siteName,
+  siteOgImage,
+  siteUrl,
+  tollFreeNumber,
+} from "./lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,6 +42,7 @@ export const metadata: Metadata = {
   authors: [{ name: siteName }],
   creator: siteName,
   publisher: siteName,
+  referrer: "origin-when-cross-origin",
   category: "education",
   keywords: [
     "TYS University",
@@ -50,6 +59,40 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      [siteLanguage]: "/",
+      "x-default": "/",
+    },
+  },
+  openGraph: {
+    title: siteName,
+    description: siteDescription,
+    url: "/",
+    siteName,
+    type: "website",
+    locale: siteLocale,
+    images: [
+      {
+        url: siteOgImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteName} logo`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [
+      {
+        url: siteOgImage,
+        alt: `${siteName} logo`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -68,6 +111,7 @@ export const metadata: Metadata = {
     icon: "/icon",
     apple: "/logo.png",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
@@ -77,25 +121,32 @@ export default function RootLayout({
 }>) {
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "CollegeOrUniversity",
+    "@type": ["CollegeOrUniversity", "EducationalOrganization"],
+    "@id": `${siteUrl}/#organization`,
     name: siteName,
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
+    logo: siteLogo,
+    image: siteOgImage,
     description: siteDescription,
+    email: contactEmail,
+    telephone: tollFreeNumber,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Fatehpur",
-      addressRegion: "Uttar Pradesh",
-      addressCountry: "IN",
+      ...campusAddress,
     },
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: siteName,
     url: siteUrl,
     description: siteDescription,
+    publisher: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    inLanguage: siteLanguage,
   };
 
   return (
@@ -104,13 +155,7 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <script
-          id="ld-json"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([organizationSchema, websiteSchema]),
-          }}
-        />
+        <JsonLd id="ld-json" data={[organizationSchema, websiteSchema]} />
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />

@@ -231,11 +231,12 @@ export default function Footer() {
                 <span>admissions@tysuniversity.edu.in</span>
               </a>
               <a
-                href="tel:1800121288800"
+                href="tel:18008901705"
+                aria-label="Call toll free number 1800 890 1705"
                 className="flex items-start gap-3 transition hover:text-white"
               >
                 <Phone size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
-                <span>1800 121 288 800</span>
+                <span>Toll free: 1800 890 1705</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />

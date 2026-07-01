@@ -29,7 +29,7 @@ const initialChat: ChatMessage[] = [
   },
 ];
 
-const helpline = "1800121288800";
+const helpline = "18008901705";
 const whatsappNumber = "911800121288800";
 
 export default function ChatBot() {
