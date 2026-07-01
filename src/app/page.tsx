@@ -8,6 +8,7 @@ import WhyChooseUs from './components/home/WhyChooseUs';
 import AboutUniversity from './components/home/AboutUniversity';
 import GallerySection from './components/home/GallerySection';
 import ApplyNowBell from './components/home/ApplyNowBell';
+import TopRecruiters from "./components/home/Toprecruiters";
 import {
   JsonLd,
   breadcrumbJsonLd,
@@ -128,6 +129,7 @@ export default function Home() {
       />
       <WhyChooseUs/>
       <QuickStats/>
+      <TopRecruiters/>
       <GallerySection/>
       <AdmissionProcess/>
       <FAQSection/>
