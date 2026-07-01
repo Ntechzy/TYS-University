@@ -8,6 +8,7 @@ import WhyChooseUs from './components/home/WhyChooseUs';
 import AboutUniversity from './components/home/AboutUniversity';
 import GallerySection from './components/home/GallerySection';
 import ApplyNowBell from './components/home/ApplyNowBell';
+import TopRecruiters from "./components/home/Toprecruiters";
 
 const pageTitle = "Best Private University in UP";
 const pageDescription =
@@ -62,6 +63,7 @@ export default function Home() {
       />
       <WhyChooseUs/>
       <QuickStats/>
+      <TopRecruiters/>
       <GallerySection/>
       <AdmissionProcess/>
       <FAQSection/>
