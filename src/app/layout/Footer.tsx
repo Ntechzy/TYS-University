@@ -236,7 +236,7 @@ export default function Footer() {
                 className="flex items-start gap-3 transition hover:text-white"
               >
                 <Phone size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
-                <span>Toll free: 1800 890 1705</span>
+                <span>Toll Free No.: 1800 890 1705</span>
               </a>
               <div className="flex items-start gap-3">
                 <MapPin size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
