@@ -37,7 +37,7 @@ export default function BuildingPopup() {
         role="dialog"
         aria-modal="true"
         aria-label="Campus building announcement"
-        className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-white shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
+        className="relative w-full max-w-[min(92vw,56.67vh)] overflow-hidden rounded-3xl bg-white shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -49,25 +49,15 @@ export default function BuildingPopup() {
           <X size={20} strokeWidth={2.5} />
         </button>
 
-        <div className="relative aspect-[4/5] w-full sm:hidden">
+        <div className="w-full">
           <Image
-            src="/building/popup-mobile.png"
+            src="/building/popupimage.png"
             alt="TYS University popup"
-            fill
+            width={1024}
+            height={1536}
             priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-
-        <div className="relative hidden aspect-[16/10] w-full sm:block">
-          <Image
-            src="/building/popup-desktop.png"
-            alt="TYS University popup"
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1024px) 90vw, 900px"
+            className="h-auto max-h-[85vh] w-full object-contain"
+            sizes="(max-width: 640px) 92vw, 38vw"
           />
         </div>
       </div>
