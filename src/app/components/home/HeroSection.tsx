@@ -4,7 +4,7 @@ import { getAllStates, getDistricts } from "india-state-district";
 import { useEffect, useMemo, useState } from "react";
 import { disciplines } from "@/app/data/programs";
 
-const heroBanners = ["/hero/hero1.webp", "/hero/hero2.webp","/hero/hero-night.webp"];
+const heroBanners = ["/hero/hero1.webp", "/hero/hero2.webp","/hero/hero-night.webp","/building/Building1.png"];
 
 export default function HeroSection() {
   const [activeBanner, setActiveBanner] = useState(0);
@@ -70,10 +70,12 @@ export default function HeroSection() {
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-64px)] w-full max-w-350 items-center px-5 py-16 sm:px-8 md:min-h-[calc(100vh-80px)] md:py-20 lg:justify-between lg:px-10">
           <div className="w-full max-w-155 text-white">
             <h1
-              className="mb-5 max-w-full wrap-break-word text-4xl font-semibold uppercase leading-tight tracking-[0.08em] sm:text-5xl sm:tracking-widest md:mb-8 md:text-6xl md:tracking-[0.12em]"
-              style={{ fontFamily: '"Poppins", Times, serif' }}
+              className="mb-5 max-w-full wrap-break-word text-4xl font-semibold uppercase leading-tight tracking-[0.08em] text-white drop-shadow-[0_6px_20px_rgba(0,0,0,0.45)] sm:text-5xl sm:tracking-widest md:mb-8 md:text-6xl md:tracking-[0.12em]"
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
-              Best Private University in UP
+              <span className="mb-3 block h-1 w-20 rounded-full bg-[color:var(--accent)] sm:w-24" />
+              <span className="block text-white/88">Best Private</span>
+              <span className="block font-bold text-white">University in UP</span>
             </h1>
 
             <p className="mb-8 max-w-130 text-base leading-relaxed text-white/85 sm:text-lg md:mb-10">

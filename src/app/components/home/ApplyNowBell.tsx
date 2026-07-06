@@ -92,7 +92,7 @@ export default function ApplyNowBell() {
 
           <div className="px-3.5 pb-3.5 pt-3.5 sm:px-5 sm:pb-4 sm:pt-4">
             <p className="text-center text-[10px] font-bold uppercase tracking-[0.12em] text-[color:var(--secondary)] sm:text-xs">
-              Application deadline: 15 June 2026
+              Application deadline: 25 July 2026
             </p>
 
             <div className="mt-3 grid grid-cols-4 gap-1.5 sm:gap-2">
