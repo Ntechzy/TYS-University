@@ -76,7 +76,7 @@ const PHOTOS = {
   classroom:
     "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&q=80&fit=crop",
   campus:
-    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&q=80&fit=crop",
+    "/building/Building1.png",
   // header avatars
   face1:
     "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=200&q=80&fit=crop&crop=face",
