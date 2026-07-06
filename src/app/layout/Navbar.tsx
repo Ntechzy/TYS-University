@@ -16,6 +16,7 @@ import {
 
 const tollFreeNumber = "18008901705";
 const tollFreeDisplay = "1800 890 1705";
+const tollFreeLabel = `Toll Free No.: ${tollFreeDisplay}`;
 
 const announcements = [
   {
@@ -34,10 +35,10 @@ const announcements = [
     cta: "REGISTER NOW",
   },
   {
-    text: `Toll Free Admission Helpline: ${tollFreeDisplay}`,
+    text: tollFreeLabel,
     href: `tel:${tollFreeNumber}`,
     cta: "CALL NOW",
-    ariaLabel: `Call toll free admission helpline ${tollFreeDisplay}`,
+    ariaLabel: `Call toll free number ${tollFreeDisplay}`,
   },
 ];
 
@@ -293,7 +294,7 @@ export default function Navbar() {
               </a>
               <a
                 href={`tel:${tollFreeNumber}`}
-                aria-label={`Call toll free admission helpline ${tollFreeDisplay}`}
+                aria-label={`Call toll free number ${tollFreeDisplay}`}
                 className="transition-colors hover:text-accent"
               >
                 <Phone size={14} />
@@ -314,7 +315,7 @@ export default function Navbar() {
 
             <a
               href={`tel:${tollFreeNumber}`}
-              aria-label={`Call toll free admission helpline ${tollFreeDisplay}`}
+              aria-label={`Call toll free number ${tollFreeDisplay}`}
               className="hidden h-12 items-center justify-between rounded bg-primary px-4 text-white transition hover:bg-accent hover:text-foreground lg:flex"
             >
               <span className="flex items-center gap-3">
@@ -322,7 +323,7 @@ export default function Navbar() {
                   <Phone size={14} />
                 </span>
                 <span>
-                  <span className="block text-[10px]">Toll Free Helpline</span>
+                  <span className="block text-[10px]">Toll Free No.</span>
                   <span className="block text-sm font-extrabold leading-tight">
                     {tollFreeDisplay}
                   </span>
@@ -477,7 +478,7 @@ export default function Navbar() {
               className="rounded border border-white/15 px-4 py-3 text-center text-sm font-bold transition hover:border-accent"
               onClick={closeMenus}
             >
-              Call Toll Free Helpline
+              {tollFreeLabel}
             </a>
           </div>
 
