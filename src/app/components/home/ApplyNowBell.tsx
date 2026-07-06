@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Bell, CalendarDays, ChevronRight, X } from "lucide-react";
 
-const TARGET_DATE = new Date("2026-06-15T23:59:59").getTime();
+const TARGET_DATE = new Date("2026-07-25T23:59:59").getTime();
 
 function getTimeLeft() {
   const diff = Math.max(TARGET_DATE - Date.now(), 0);

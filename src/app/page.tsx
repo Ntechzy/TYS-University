@@ -9,6 +9,7 @@ import AboutUniversity from './components/home/AboutUniversity';
 import GallerySection from './components/home/GallerySection';
 import ApplyNowBell from './components/home/ApplyNowBell';
 import TopRecruiters from "./components/home/Toprecruiters";
+import BuildingPopup from "./components/home/BuildingPopup";
 import {
   JsonLd,
   breadcrumbJsonLd,
@@ -122,6 +123,7 @@ export default function Home() {
   return (
     <>
       <JsonLd id="home-json-ld" data={homeSchema} />
+      <BuildingPopup />
       <HeroSection/>
       <AboutUniversity/>
       <CtaBanner 

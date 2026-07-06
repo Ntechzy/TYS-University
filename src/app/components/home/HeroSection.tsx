@@ -73,7 +73,7 @@ export default function HeroSection() {
               className="mb-5 max-w-full wrap-break-word text-4xl font-semibold uppercase leading-tight tracking-[0.08em] text-white drop-shadow-[0_6px_20px_rgba(0,0,0,0.45)] sm:text-5xl sm:tracking-widest md:mb-8 md:text-6xl md:tracking-[0.12em]"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
-              <span className="mb-3 block h-1 w-20 rounded-full bg-[color:var(--accent)] sm:w-24" />
+              <span className="mb-3 block h-1 w-20 rounded-full bg-accent sm:w-24" />
               <span className="block text-white/88">Best Private</span>
               <span className="block font-bold text-white">University in UP</span>
             </h1>
