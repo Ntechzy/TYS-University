@@ -85,7 +85,7 @@ export default function ChatBot() {
   }, []);
 
   const scrollToApplicationForm = () => {
-    document.querySelector("#hero-application-form")?.scrollIntoView({
+    document.querySelector("#apply")?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
