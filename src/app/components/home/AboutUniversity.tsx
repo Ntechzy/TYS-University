@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { icon: Landmark, value: "2005", label: "Founded" },
+  { icon: Landmark, value: "2003", label: "Founded" },
   { icon: Building2, value: "8,000", label: "Sq.m. Campus" },
   { icon: Users, value: "12,500+", label: "Students" },
   { icon: BookOpenCheck, value: "50+", label: "Academic Fields" },
@@ -23,22 +23,128 @@ const stats = [
 ];
 
 const legacyInstitutions = [
-  { name: "Thakur Yugraj Singh Mahavidyalaya", year: "2005" },
-  { name: "Nivedita Singh Girls Degree College", year: "2008" },
-  { name: "Thakur Yugraj Singh Law College", year: "2010" },
-  { name: "Thakur Yugraj Singh Pharmacy College", year: "2017" },
-  { name: "Thakur Yugraj Singh College of Medical and Sciences", year: "2021" },
+  {
+    name: "Rani Chandra Prabha Mahavidyalaya, Khaga",
+    courses: "B.A., B.Sc., B.Com., B.Ed., B.P.Ed., D.El.Ed., M.A.",
+    year: "2003",
+  },
+  {
+    name: "Th. Yugraj Singh Mahavidyalaya, Fatehpur",
+    courses: "B.A., B.Sc., B.Com., D.El.Ed., M.A., M.Sc.",
+    year: "2005",
+  },
+  {
+    name: "Asha Singh Girls Inter College, Khaga",
+    courses: "From 6th to 12th (UP Board)",
+    year: "2005",
+  },
+  {
+    name: "Nivedita Singh Girls Degree College, Fatehpur",
+    courses: "B.A., B.Sc., D.El.Ed., M.A., M.Sc.",
+    year: "2008",
+  },
+  {
+    name: "Abhay Pratap Singh Degree College, Bindki",
+    courses: "B.A., B.Sc., B.Com., D.El.Ed., M.A., M.Sc.",
+    year: "2008",
+  },
+  {
+    name: "Th. Yugraj Singh Law College, Fatehpur",
+    courses: "LL.B., B.A. LL.B.",
+    year: "2009",
+  },
+  {
+    name: "Th. Yugraj Singh ITC, Fatehpur",
+    courses: "Fitter, Electrician, COPA",
+    year: "2009",
+  },
+  {
+    name: "Th. Jai Narayan Singh Memorial Degree College, Hathgam",
+    courses: "B.A., B.Sc., B.Ed., D.El.Ed., M.A.",
+    year: "2011",
+  },
+  {
+    name: "Yashraj Institute of Education, Lucknow",
+    courses: "B.B.A., B.C.A., B.Com., D.El.Ed., B.Ed.",
+    year: "2012",
+  },
+  {
+    name: "Abhay Pratap Singh International School, Khaga (English Medium)",
+    courses: "PG to 12th (CBSE Board), D.El.Ed.",
+    year: "2013",
+  },
+  {
+    name: "Abhay Pratap Singh Degree College, Ajuha Kaushambi",
+    courses: "B.Sc., D.El.Ed.",
+    year: "2016",
+  },
+  {
+    name: "Khushi Institute of Education, Saura",
+    courses: "D.El.Ed.",
+    year: "2016",
+  },
+  {
+    name: "Lal Singh International School, Hathgam (English Medium)",
+    courses: "PG to 10th (CBSE Board), D.El.Ed.",
+    year: "2017",
+  },
+  {
+    name: "Th. Yugraj Singh Pharmacy College, Fatehpur",
+    courses: "B.Pharm., D.Pharm.",
+    year: "2019",
+  },
+  {
+    name: "Babu Yugraj Singh Pharmacy College, Lucknow",
+    courses: "B.Pharm., D.Pharm.",
+    year: "2019",
+  },
+  {
+    name: "Yashraj Institute of Pharmacy, Lucknow",
+    courses: "B.Pharm., D.Pharm.",
+    year: "2019",
+  },
+  {
+    name: "Rani Chandra Prabha Pharmacy College, Khaga",
+    courses: "D.Pharm.",
+    year: "2019",
+  },
+  {
+    name: "Babu Yugraj Singh Ayurvedic Medical College, Lucknow",
+    courses: "B.A.M.S.",
+    year: "2020",
+  },
+  {
+    name: "Th. Yugraj Singh College of Medical & Science, Fatehpur",
+    courses: "B.Sc. Nursing",
+    year: "2021",
+  },
+  {
+    name: "Babu Yugraj Singh College of Medical & Science, Lucknow",
+    courses: "B.Sc. Nursing, A.N.M.",
+    year: "2021",
+  },
+  {
+    name: "Abhay Pratap Singh Pharmacy College, Ajuha Kaushambi",
+    courses: "D.Pharm.",
+    year: "2023",
+  },
+  {
+    name: "Abhay Pratap Singh Pharmacy College, Bindki, Fatehpur",
+    courses: "D.Pharm.",
+    year: "2023",
+  },
 ];
 
 const latestDevelopment = {
-  name: "Thakur Yugraj Singh University",
-  year: "2026",
+  name: "T.Y.S. Pharmacy College, Fatehpur",
+  courses: "D.Pharm.",
+  year: "2023",
 };
 
 const legacyTimelineItems = [...legacyInstitutions, latestDevelopment];
 
 const overviewPoints = [
-  "Established in 2005 to expand quality higher education in Fatehpur.",
+  "Established from a 2003 legacy to expand quality education across Fatehpur, Khaga, Lucknow, Kaushambi, Bindki, Hathgam, and Saura.",
   "Offers undergraduate and postgraduate programs across arts, science, and commerce.",
   "Built on an 8,000 sq.m. campus with practical, student-focused infrastructure.",
 ];
@@ -209,7 +315,7 @@ export default function AboutUniversity() {
             <div className="absolute inset-0 bg-linear-to-t from-[#0A0905]/90 via-[#0A0905]/20 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4A96A]">
-                Legacy since 2005
+                Legacy since 2003
               </p>
               <h2 className="font-display mt-3 text-3xl font-black leading-tight text-white md:text-4xl">
                 A growing academic ecosystem in Fatehpur
@@ -351,7 +457,7 @@ export default function AboutUniversity() {
                         Thakur Yugraj Singh Group
                       </p>
                       <p className="mt-1 text-[10px] font-medium tracking-widest text-[#D4A96A]/70 tabular-nums">
-                        EST. 2005
+                        EST. 2003
                       </p>
                     </div>
                   </motion.div>
@@ -397,6 +503,9 @@ export default function AboutUniversity() {
                           <div className="min-w-0 flex-1">
                             <p className="text-xs font-medium leading-snug text-white/80 transition-colors group-hover:text-white sm:text-sm">
                               {item.name}
+                            </p>
+                            <p className="mt-1 text-[10px] leading-snug text-white/42 transition-colors group-hover:text-white/60 sm:text-xs">
+                              {item.courses}
                             </p>
                             <div className="mt-1.5 flex items-center gap-2.5">
                               <span className="text-[10px] font-medium tracking-widest text-white/40 tabular-nums transition-colors group-hover:text-[#D4A96A]/80">
@@ -498,7 +607,7 @@ export default function AboutUniversity() {
                         className="relative rounded-2xl border border-[#D4A96A]/35 bg-[#D4A96A]/12 px-8 py-5 text-center shadow-xl shadow-[#D4A96A]/5"
                       >
                         <span className="text-[10px] font-black uppercase tracking-[0.24em] text-[#D4A96A]">
-                          Root • 2005
+                          Root &bull; 2003
                         </span>
                         <p className="mt-2 text-lg font-black leading-tight">
                           Thakur Yugraj Singh Group
@@ -512,7 +621,7 @@ export default function AboutUniversity() {
                           aria-hidden
                           className="absolute left-[10%] right-[10%] top-0 h-px bg-[#D4A96A]/45"
                         />
-                        <div className="grid grid-cols-5 gap-4 pt-10">
+                        <div className="grid grid-cols-4 gap-4 pt-10 xl:grid-cols-5">
                           {legacyInstitutions.map((item, i) => {
                             return (
                               <motion.div
@@ -532,7 +641,7 @@ export default function AboutUniversity() {
                                   className="absolute left-1/2 top-[-2.5rem] h-10 w-px -translate-x-1/2 bg-[#D4A96A]/45"
                                 />
                                 <div
-                                  className="min-h-50 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
+                                  className="min-h-58 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
                                 >
                                   <span
                                     className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#D4A96A]/35 bg-[#0A0905] text-[11px] font-black text-[#D4A96A] tabular-nums"
@@ -544,6 +653,9 @@ export default function AboutUniversity() {
                                   </p>
                                   <p className="mt-3 text-sm font-semibold leading-snug text-white/82">
                                     {item.name}
+                                  </p>
+                                  <p className="mt-3 text-xs leading-snug text-white/45">
+                                    {item.courses}
                                   </p>
                                 </div>
                               </motion.div>
@@ -580,8 +692,11 @@ export default function AboutUniversity() {
                           <p className="mt-3 text-base font-black leading-snug text-white">
                             {latestDevelopment.name}
                           </p>
+                          <p className="mt-3 text-sm leading-snug text-white/55">
+                            {latestDevelopment.courses}
+                          </p>
                           <p className="mx-auto mt-4 inline-flex rounded-full bg-[#D4A96A]/15 px-3 py-1 text-[10px] font-black uppercase tracking-[0.14em] text-[#D4A96A]">
-                            University Establishment
+                            Latest Development
                           </p>
                         </motion.div>
                       </div>
