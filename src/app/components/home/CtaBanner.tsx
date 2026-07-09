@@ -8,7 +8,10 @@ interface CtaBannerProps {
 
 export const CtaBanner: React.FC<CtaBannerProps> = ({ backgroundImageUrl }) => {
   const handleApply = () => {
-    console.log("Redirecting to admissions portal...");
+    document.querySelector("#apply")?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
   };
 
   return (

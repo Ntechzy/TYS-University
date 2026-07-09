@@ -72,9 +72,9 @@ const featuredUpdates = [
 ];
 
 const socialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com/", icon: FacebookIcon },
-  { label: "Instagram", href: "https://www.instagram.com/", icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: LinkedInIcon },
+  { label: "Facebook", href: "https://www.facebook.com/people/Thakur-Yugraj-Singh-University-TYS/61591509453972/", icon: FacebookIcon },
+  { label: "Instagram", href: "https://www.instagram.com/tys_university/?hl=en", icon: InstagramIcon },
+  // { label: "LinkedIn", href: "https://www.linkedin.com/", icon: LinkedInIcon },
   { label: "YouTube", href: "https://www.youtube.com/", icon: YouTubeIcon },
 ];
 
@@ -238,6 +238,14 @@ export default function Footer() {
                 <Phone size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
                 <span>Toll Free No.: 1800 890 1705</span>
               </a>
+              <a
+                href="tel:+919194798070"
+                aria-label="Call support desk number +91 9194798070"
+                className="flex items-start gap-3 transition hover:text-white"
+              >
+                <Phone size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
+                <span>Support Desk: +91 9194798070</span>
+              </a>
               <div className="flex items-start gap-3">
                 <MapPin size={17} className="mt-0.5 shrink-0 text-[#f6c344]" />
                 <span>Shanti Nagar, Fatehpur, Uttar Pradesh, India</span>
@@ -256,32 +264,32 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/10 bg-white/4 px-5 py-5 text-sm text-white/55 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-  <p>&copy; {year} TYS University. All rights reserved.</p>
-  
-  <p className="text-white/55 lg:text-center">
-    Developed &amp; Managed by{" "}
-    <a 
-      href="https://ntechzy.in" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="font-medium text-white transition-colors hover:text-[#f6c344] hover:underline"
-    >
-      Ntechzy
-    </a>
-  </p>
+          <p>&copy; {year} TYS University. All rights reserved.</p>
 
-  <div className="flex flex-wrap gap-5">
-    <a href="#privacy" className="transition hover:text-white">
-      Privacy policy
-    </a>
-    <a href="#legal" className="transition hover:text-white">
-      Legal notice
-    </a>
-    <a href="#terms" className="transition hover:text-white">
-      Terms of service
-    </a>
-  </div>
-</div>
+          <p className="text-white/55 lg:text-center">
+            Developed &amp; Managed by{" "}
+            <a
+              href="https://ntechzy.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white transition-colors hover:text-[#f6c344] hover:underline"
+            >
+              Ntechzy
+            </a>
+          </p>
+
+          <div className="flex flex-wrap gap-5">
+            <a href="#privacy" className="transition hover:text-white">
+              Privacy policy
+            </a>
+            <a href="#legal" className="transition hover:text-white">
+              Legal notice
+            </a>
+            <a href="#terms" className="transition hover:text-white">
+              Terms of service
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -17,6 +17,9 @@ import {
 const tollFreeNumber = "18008901705";
 const tollFreeDisplay = "1800 890 1705";
 const tollFreeLabel = `Toll Free No.: ${tollFreeDisplay}`;
+const supportDeskNumber = "+919194798070";
+const supportDeskDisplay = "+91 9194798070";
+const supportDeskLabel = `Support Desk: ${supportDeskDisplay}`;
 
 const announcements = [
   {
@@ -39,6 +42,12 @@ const announcements = [
     href: `tel:${tollFreeNumber}`,
     cta: "CALL NOW",
     ariaLabel: `Call toll free number ${tollFreeDisplay}`,
+  },
+  {
+    text: supportDeskLabel,
+    href: `tel:${supportDeskNumber}`,
+    cta: "CALL NOW",
+    ariaLabel: `Call support desk number ${supportDeskDisplay}`,
   },
 ];
 
@@ -479,6 +488,13 @@ export default function Navbar() {
               onClick={closeMenus}
             >
               {tollFreeLabel}
+            </a>
+            <a
+              href={`tel:${supportDeskNumber}`}
+              className="rounded border border-white/15 px-4 py-3 text-center text-sm font-bold transition hover:border-accent"
+              onClick={closeMenus}
+            >
+              {supportDeskLabel}
             </a>
           </div>
 

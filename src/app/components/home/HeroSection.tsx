@@ -84,7 +84,7 @@ export default function HeroSection() {
   }, []);
 
   const scrollToApplicationForm = () => {
-    document.querySelector("#hero-application-form")?.scrollIntoView({
+    document.querySelector("#apply")?.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
@@ -203,7 +203,7 @@ export default function HeroSection() {
 
           <div className="w-full">
             <form
-              id="hero-application-form"
+              id="apply"
               onSubmit={handleSubmit}
               className="mx-auto w-full max-w-107.5 scroll-mt-24 rounded-xl border border-black/10 bg-white p-5 shadow-2xl sm:p-8 md:scroll-mt-32"
             >
