@@ -9,6 +9,10 @@ type SubmitStatus = "idle" | "submitting" | "success" | "error";
 type AdmissionFormProps = {
   formId?: string;
   className?: string;
+  title?: string;
+  eyebrow?: string;
+  eyebrowClassName?: string;
+  locationLabel?: string;
 };
 
 function Spinner() {
@@ -39,6 +43,10 @@ function Spinner() {
 export default function AdmissionForm({
   formId,
   className = "mx-auto w-full max-w-107.5 scroll-mt-24 rounded-xl border border-black/10 bg-white p-5 shadow-2xl sm:p-8 md:scroll-mt-32",
+  title = "TYS UNIVERSITY",
+  eyebrow = "APPLY TODAY FOR",
+  eyebrowClassName = "text-xs text-(--secondary)/80 sm:text-sm",
+  locationLabel = "INDIA",
 }: AdmissionFormProps) {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -147,14 +155,14 @@ export default function AdmissionForm({
   return (
     <form id={formId} onSubmit={handleSubmit} className={className}>
       <div className="text-center">
-        <p className="text-xs text-(--secondary)/80 sm:text-sm">
-          APPLY TODAY FOR
+        <p className={eyebrowClassName}>
+          {eyebrow}
         </p>
         <h3 className="mt-2 text-lg font-bold text-primary sm:text-xl">
-          TYS UNIVERSITY
+          {title}
         </h3>
         <p className="mt-1 text-sm font-semibold text-(--foreground)/70 sm:text-base">
-          INDIA
+          {locationLabel}
         </p>
       </div>
 
