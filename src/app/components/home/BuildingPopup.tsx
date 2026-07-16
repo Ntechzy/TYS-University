@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import AdmissionForm from "@/app/components/home/AdmissionForm";
 
 export default function BuildingPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +36,8 @@ export default function BuildingPopup() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Campus building announcement"
-        className="relative w-full max-w-[min(92vw,56.67vh)] overflow-hidden rounded-3xl bg-white shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
+        aria-label="TYS University admission form"
+        className="relative w-full max-w-4xl overflow-y-auto rounded-3xl shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -49,17 +49,7 @@ export default function BuildingPopup() {
           <X size={20} strokeWidth={2.5} />
         </button>
 
-        <div className="w-full">
-          <Image
-            src="/building/popupimage.png"
-            alt="TYS University popup"
-            width={1024}
-            height={1536}
-            priority
-            className="h-auto max-h-[85vh] w-full object-contain"
-            sizes="(max-width: 640px) 92vw, 38vw"
-          />
-        </div>
+        <AdmissionForm className="w-full rounded-3xl border border-black/10 bg-white p-5 shadow-none sm:p-8" />
       </div>
     </div>
   );
