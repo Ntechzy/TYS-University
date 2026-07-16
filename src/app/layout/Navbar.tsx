@@ -78,9 +78,12 @@ const navItems: NavItem[] = [
   {
     label: "ABOUT",
     links: [
-      { label: "About TYS University", href: "#about" },
-      { label: "Leadership", href: "#leadership" },
-      { label: "Accreditations", href: "#accreditations" },
+      { label: "About TYS University", href: "/about" },
+      { label: "Mission & Vision", href: "/about/mission-vision" },
+      {
+        label: "Message from the Chancellor",
+        href: "/about/message-from-chancellor",
+      },
     ],
   },
   {

@@ -23,5 +23,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       images: [absoluteUrl("/logo.png")],
     },
+    {
+      url: `${siteUrl}/about`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: [absoluteUrl("/logo.png")],
+    },
+    {
+      url: `${siteUrl}/about/mission-vision`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+      images: [absoluteUrl("/logo.png")],
+    },
+    {
+      url: `${siteUrl}/about/message-from-chancellor`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+      images: [absoluteUrl("/logo.png")],
+    },
   ];
 }
