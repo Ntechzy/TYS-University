@@ -135,12 +135,12 @@ export default function FutureReadySection() {
 
       <div
         aria-hidden="true"
-        className="absolute left-0 top-0 -z-10 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F2B90D]/[0.06] blur-3xl"
+        className="absolute left-0 top-0 -z-10 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F2B90D]/6 blur-3xl"
       />
 
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-0 -z-10 size-96 translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/[0.04] blur-3xl"
+        className="absolute bottom-0 right-0 -z-10 size-96 translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/4 blur-3xl"
       />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
@@ -157,10 +157,10 @@ export default function FutureReadySection() {
         >
           <div
             aria-hidden="true"
-            className="absolute -left-4 -top-5 h-[92%] w-[92%] rounded-[2rem] bg-gradient-to-br from-sky-100 to-sky-50 sm:-left-7 sm:-top-7"
+            className="absolute -left-4 -top-5 h-[92%] w-[92%] rounded-4xl bg-linear-to-br from-sky-100 to-sky-50 sm:-left-7 sm:-top-7"
           />
 
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#F5F1EA]">
+          <div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-[#F5F1EA]">
             <Image
               // Replace this placeholder path with the final uploaded student image.
               src="/feature-image/future-student.png"
@@ -173,7 +173,7 @@ export default function FutureReadySection() {
 
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-[#0B1B3F]/10 via-transparent to-white/5"
+              className="absolute inset-0 bg-linear-to-t from-[#0B1B3F]/10 via-transparent to-white/5"
             />
           </div>
         </motion.div>
