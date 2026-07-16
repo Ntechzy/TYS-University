@@ -246,7 +246,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-480 items-center justify-between p-3 md:h-20 md:px-4">
-          <Link href="/" className="flex shrink-0 items-center gap-2">
+          <Link href="/" className="flex shrink-0 items-center gap-2 md:gap-3">
             <Image
               src="/logo.png"
               alt="TYS University logo"
@@ -268,6 +268,34 @@ export default function Navbar() {
                 }`}
               >
                 Discover. Learn. Empower.
+              </span>
+            </span>
+
+            <span
+              className={`hidden items-center gap-2 rounded-full border px-2.5 py-1 shadow-[0_10px_24px_rgba(0,0,0,0.18)] sm:flex ${
+                isScrolled
+                  ? "border-[#D4A96A]/45 bg-white/92"
+                  : "border-white/20 bg-black/25"
+              }`}
+            >
+              <Image
+                src="/feature-image/20+.png"
+                alt="20 plus years educational legacy"
+                width={40}
+                height={40}
+                className="h-8 w-8 shrink-0 object-contain md:h-10 md:w-10"
+              />
+              <span className="leading-none">
+                <span className="block text-[9px] font-bold uppercase tracking-[0.22em] text-[#8B2C2C] md:text-[10px]">
+                  Legacy
+                </span>
+                <span
+                  className={`mt-0.5 block text-[10px] font-extrabold uppercase tracking-[0.12em] md:text-[11px] ${
+                    isScrolled ? "text-black/80" : "text-white"
+                  }`}
+                >
+                  20+ Years
+                </span>
               </span>
             </span>
           </Link>
@@ -475,6 +503,24 @@ export default function Navbar() {
       {isMobileMenuOpen ? (
         <div className="max-h-[calc(100vh-88px)] overflow-y-auto border-t border-black/10 bg-[#F4F1EC] px-4 py-5 text-black shadow-2xl lg:hidden">
           <div className="grid gap-3">
+            <div className="flex items-center gap-3 rounded-2xl border border-[#D4A96A]/25 bg-white px-4 py-3 shadow-sm">
+              <Image
+                src="/feature-image/20+.png"
+                alt="20 plus years educational legacy"
+                width={52}
+                height={52}
+                className="h-12 w-12 shrink-0 object-contain"
+              />
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#8B2C2C]">
+                  Educational Legacy
+                </p>
+                <p className="mt-1 text-sm font-extrabold text-black">
+                  20+ Years of Excellence
+                </p>
+              </div>
+            </div>
+
             <a
               href="#apply"
               className="rounded bg-accent px-4 py-3 text-center text-sm font-bold text-foreground transition hover:bg-white"
