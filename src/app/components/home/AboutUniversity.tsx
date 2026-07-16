@@ -173,6 +173,36 @@ const stagger: Variants = {
 
 const inView = { once: true, amount: 0.15 };
 
+function LegacySeal({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.92, y: 18 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={inView}
+      transition={{ duration: 0.6, ease }}
+      className={className}
+    >
+      <div className="relative">
+        <div
+          aria-hidden
+          className="absolute inset-8 rounded-full bg-[#D4A96A]/16 blur-3xl"
+        />
+        <Image
+          src="/feature-image/20+.png"
+          alt="20 plus years of educational legacy at TYS University"
+          width={520}
+          height={520}
+          className="relative z-10 h-auto w-full object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.45)]"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 export default function AboutUniversity() {
   return (
     <section className="relative overflow-hidden bg-[#F4F1EC] text-[#0A0905]">
@@ -436,6 +466,8 @@ export default function AboutUniversity() {
                 From the first campus to the latest development
               </h2>
 
+              <LegacySeal className="mx-auto mt-6 w-full max-w-56 sm:max-w-64" />
+
               <div className="mt-5 sm:mt-8">
                 <div className="relative rounded-3xl border border-white/8 bg-white/[0.03] p-3 sm:p-5">
                   {/* Root Institution */}
@@ -558,18 +590,20 @@ export default function AboutUniversity() {
               className="pointer-events-none absolute -right-28 top-14 h-72 w-72 rounded-full bg-[#8B2C2C]/18 blur-3xl"
             />
 
-            <div className="relative z-10 mb-8 flex items-end justify-between gap-8">
-              <div>
+            <div className="relative z-10 mb-8 flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
+              <div className="max-w-3xl">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4A96A]">
                   Legacy Institutions
                 </p>
                 <h2 className="mt-3 font-display text-4xl font-black leading-tight">
                   From the first campus to the latest development
                 </h2>
+                <p className="mt-4 max-w-112 text-sm leading-6 text-white/55">
+                  The history of our university network, from the original institution to the latest development.
+                </p>
               </div>
-              <p className="max-w-112 text-sm leading-6 text-white/55">
-                The history of our university network, from the original institution to the latest development.
-              </p>
+
+              <LegacySeal className="mx-auto w-full max-w-60 shrink-0 xl:mx-0 xl:max-w-72" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-330">
