@@ -69,7 +69,10 @@ export default function HeroSection() {
           </div>
 
           <div className="w-full">
-            <AdmissionForm formId="apply" />
+            <AdmissionForm
+              formId="apply"
+              locationLabel="FATEHPUR, UTTAR PRADESH"
+            />
           </div>
         </div>
 

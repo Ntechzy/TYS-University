@@ -18,6 +18,7 @@ import {
   siteOgImage,
   webPageJsonLd,
 } from './lib/seo';
+import FactsAndFiguresSection from "./components/home/FactsAndFiguresSection";
 
 const pageTitle = "Best Private University in UP";
 const pageDescription =
@@ -134,6 +135,7 @@ export default function Home() {
       <TopRecruiters/>
       <GallerySection/>
       <AdmissionProcess/>
+      <FactsAndFiguresSection/>
       <FAQSection/>
       <ApplyNowBell />
     </>

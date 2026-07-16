@@ -30,7 +30,7 @@ export default function BuildingPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
+      className="fixed inset-0 z-10000 flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
       onClick={() => setIsOpen(false)}
     >
       <div
@@ -49,7 +49,12 @@ export default function BuildingPopup() {
           <X size={20} strokeWidth={2.5} />
         </button>
 
-        <AdmissionForm className="w-full rounded-3xl border border-black/10 bg-white p-5 shadow-none sm:p-8" />
+        <AdmissionForm
+          eyebrow="ADMISSION OPEN"
+          eyebrowClassName="inline-block rounded-full bg-accent px-4 py-1 text-xs font-bold tracking-[0.18em] text-foreground shadow-sm sm:text-sm"
+          locationLabel="FATEHPUR, UTTAR PRADESH"
+          className="w-full rounded-3xl border border-black/10 bg-white p-5 shadow-none sm:p-8"
+        />
       </div>
     </div>
   );
