@@ -352,7 +352,7 @@ export default function FactsAndFiguresSection() {
 
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-0 -z-10 size-[28rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/[0.06] blur-3xl"
+        className="absolute bottom-0 right-0 -z-10 size-112 translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/6 blur-3xl"
       />
 
       <div className="mx-auto w-full max-w-7xl px-6">
