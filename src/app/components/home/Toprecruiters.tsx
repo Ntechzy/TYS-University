@@ -9,7 +9,7 @@ const recruiters = [
   { name: "Infosys", category: "Tech", image: "/recruiters/infosys.png" },
   { name: "HCL", category: "Tech", image: "/recruiters/hcl.png" },
   { name: "IBM", category: "Tech", image: "/recruiters/ibm.png" },
-  { name: "JSW", category: "Engineering", image: "/recruiters/jsw.png" },
+  { name: "Metrol Studios", category: "Engineering", image: "/recruiters/metrol-studios.png" },
   { name: "Tech Mahindra", category: "Tech", image: "/recruiters/tech-mahindar.png" },
   { name: "CareerKick", category: "Education", image: "/recruiters/careerkick.png" },
   { name: "Time Now Navbharat", category: "Media", image: "/recruiters/timenownavbharat.png" },
