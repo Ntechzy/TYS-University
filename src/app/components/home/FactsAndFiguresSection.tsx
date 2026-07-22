@@ -1,6 +1,7 @@
 // FactsAndFiguresSection.tsx
 "use client";
 
+import Image from "next/image";
 import {
   ArrowRight,
   Briefcase,
@@ -352,7 +353,7 @@ export default function FactsAndFiguresSection() {
 
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-0 -z-10 size-[28rem] translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/[0.06] blur-3xl"
+        className="absolute bottom-0 right-0 -z-10 size-112 translate-x-1/3 translate-y-1/3 rounded-full bg-[#6B1E23]/6 blur-3xl"
       />
 
       <div className="mx-auto w-full max-w-7xl px-6">
@@ -407,30 +408,58 @@ export default function FactsAndFiguresSection() {
               strokeWidth={1}
             />
 
-            <div className="relative z-10">
-              <Eyebrow>Where Learning Shapes the Future</Eyebrow>
+            <div className="relative z-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <Eyebrow>Where Learning Shapes the Future</Eyebrow>
 
-              <p className="mt-6 max-w-4xl text-base leading-8 text-gray-700 md:text-lg md:leading-9">
-                Education today must prepare students not only for examinations,
-                but also for evolving technologies, professional responsibility,
-                and real-world challenges. At TYS University, learning is
-                designed to strengthen knowledge, curiosity, confidence, and the
-                ability to apply ideas with purpose. Every academic experience
-                is shaped by industry perspective, expert mentorship, and
-                practical learning so students are prepared to contribute
-                responsibly in their professions and communities.
-              </p>
+                <p className="mt-6 max-w-4xl text-base leading-8 text-gray-700 md:text-lg md:leading-9">
+                  Education today must prepare students not only for examinations,
+                  but also for evolving technologies, professional responsibility,
+                  and real-world challenges. At TYS University, learning is
+                  designed to strengthen knowledge, curiosity, confidence, and the
+                  ability to apply ideas with purpose. Every academic experience
+                  is shaped by industry perspective, expert mentorship, and
+                  practical learning so students are prepared to contribute
+                  responsibly in their professions and communities.
+                </p>
 
-              <div className="mt-8 border-t-2 border-[#6B1E23] pt-6">
-                <div className="flex flex-wrap gap-3">
-                  {learningPillars.map((pillar) => (
-                    <span
-                      key={pillar}
-                      className="inline-flex rounded-full bg-[#F2B90D] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#6B1E23]"
-                    >
-                      {pillar}
-                    </span>
-                  ))}
+                <div className="mt-8 border-t-2 border-[#6B1E23] pt-6">
+                  <div className="flex flex-wrap gap-3">
+                    {learningPillars.map((pillar) => (
+                      <span
+                        key={pillar}
+                        className="inline-flex rounded-full bg-[#F2B90D] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#6B1E23]"
+                      >
+                        {pillar}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mx-auto w-full max-w-xl lg:ml-auto lg:max-w-none">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-[#6B1E23]/10 bg-white p-2 shadow-[0_24px_50px_rgba(70,30,20,0.12)]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-linear-to-br from-[#6B1E23]/6 via-transparent to-[#F2B90D]/10"
+                  />
+                  <div className="relative aspect-4/3 overflow-hidden rounded-[1.1rem]">
+                    <Image
+                      src="/feature-image/engineeringlab.jpeg"
+                      alt="Students learning in the TYS University engineering lab"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 38vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-[#0B1B3F]/70 via-[#0B1B3F]/20 to-transparent p-4 md:p-5">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/75">
+                        Practical Learning Environment
+                      </p>
+                      <p className="mt-1 text-sm font-semibold text-white md:text-base">
+                        Engineering lab sessions built around hands-on exploration
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

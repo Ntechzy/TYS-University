@@ -19,6 +19,7 @@ import {
   webPageJsonLd,
 } from './lib/seo';
 import FactsAndFiguresSection from "./components/home/FactsAndFiguresSection";
+import FutureReadySection from "./components/home/FutureReadySection";
 
 const pageTitle = "Best Private University in UP";
 const pageDescription =
@@ -127,6 +128,7 @@ export default function Home() {
       <BuildingPopup />
       <HeroSection/>
       <AboutUniversity/>
+      <FutureReadySection/>
       <CtaBanner 
         backgroundImageUrl="https://img.magnific.com/premium-photo/cheerful-indian-asian-young-group-college-students-friends-laughing-together-while-sitting-standing-walking-campus_466689-8627.jpg?semt=ais_hybrid&w=740&q=80" 
       />

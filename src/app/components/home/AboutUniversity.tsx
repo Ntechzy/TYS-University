@@ -173,6 +173,36 @@ const stagger: Variants = {
 
 const inView = { once: true, amount: 0.15 };
 
+function LegacySeal({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.92, y: 18 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={inView}
+      transition={{ duration: 0.6, ease }}
+      className={className}
+    >
+      <div className="relative">
+        <div
+          aria-hidden
+          className="absolute inset-8 rounded-full bg-[#D4A96A]/16 blur-3xl"
+        />
+        <Image
+          src="/feature-image/20+.png"
+          alt="20 plus years of educational legacy at TYS University"
+          width={520}
+          height={520}
+          className="relative z-10 h-auto w-full object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.45)]"
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 export default function AboutUniversity() {
   return (
     <section className="relative overflow-hidden bg-[#F4F1EC] text-[#0A0905]">
@@ -436,8 +466,10 @@ export default function AboutUniversity() {
                 From the first campus to the latest development
               </h2>
 
+              <LegacySeal className="mx-auto mt-6 w-full max-w-56 sm:max-w-64" />
+
               <div className="mt-5 sm:mt-8">
-                <div className="relative rounded-3xl border border-white/8 bg-white/[0.03] p-3 sm:p-5">
+                <div className="relative rounded-3xl border border-white/8 bg-white/3 p-3 sm:p-5">
                   {/* Root Institution */}
                   <motion.div
                     initial={{ opacity: 0, y: 14 }}
@@ -467,7 +499,7 @@ export default function AboutUniversity() {
                     {/* Dynamic Vertical Line */}
                     <div
                       aria-hidden
-                      className="absolute bottom-[1.875rem] left-[1.875rem] top-[-0.75rem] w-px bg-linear-to-b from-[#D4A96A] via-[#D4A96A]/45 to-transparent sm:left-[2.375rem] sm:top-[-1.25rem]"
+                      className="absolute bottom-7.5 left-7.5 -top-3 w-px bg-linear-to-b from-[#D4A96A] via-[#D4A96A]/45 to-transparent sm:left-9.5 sm:-top-5"
                     />
 
                     {legacyTimelineItems.map((item, i) => {
@@ -480,7 +512,7 @@ export default function AboutUniversity() {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={inView}
                           transition={{ duration: 0.5, delay: i * 0.08, ease }}
-                          className="group relative ml-[3.375rem] flex items-center gap-3 rounded-2xl border border-white/8 bg-white/4 px-4 py-3.5 transition-all duration-300 hover:border-[#D4A96A]/40 hover:bg-white/[0.07] sm:ml-[5.125rem] sm:gap-4 sm:px-5 sm:py-4"
+                          className="group relative ml-13.5 flex items-center gap-3 rounded-2xl border border-white/8 bg-white/4 px-4 py-3.5 transition-all duration-300 hover:border-[#D4A96A]/40 hover:bg-white/[0.07] sm:ml-20.5 sm:gap-4 sm:px-5 sm:py-4"
                         >
                           {/* Horizontal Connection Line */}
                           <span
@@ -531,7 +563,7 @@ export default function AboutUniversity() {
               <div className="mt-5 flex items-start gap-2 text-xs text-white/35 sm:mt-6 sm:items-center">
                 <CheckCircle2
                   size={14}
-                  className="shrink-0 text-[#D4A96A] sm:w-[13px]"
+                  className="shrink-0 text-[#D4A96A] sm:w-3.25"
                 />
                 <span className="leading-tight sm:leading-normal">
                   Part of the wider TYSU academic ecosystem
@@ -558,24 +590,26 @@ export default function AboutUniversity() {
               className="pointer-events-none absolute -right-28 top-14 h-72 w-72 rounded-full bg-[#8B2C2C]/18 blur-3xl"
             />
 
-            <div className="relative z-10 mb-8 flex items-end justify-between gap-8">
-              <div>
+            <div className="relative z-10 mb-8 flex flex-col gap-8 xl:flex-row xl:items-end xl:justify-between">
+              <div className="max-w-3xl">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#D4A96A]">
                   Legacy Institutions
                 </p>
                 <h2 className="mt-3 font-display text-4xl font-black leading-tight">
                   From the first campus to the latest development
                 </h2>
+                <p className="mt-4 max-w-md text-sm leading-6 text-white/55">
+                  The history of our university network, from the original institution to the latest development.
+                </p>
               </div>
-              <p className="max-w-112 text-sm leading-6 text-white/55">
-                The history of our university network, from the original institution to the latest development.
-              </p>
+
+              <LegacySeal className="mx-auto w-full max-w-60 shrink-0 xl:mx-0 xl:max-w-72" />
             </div>
 
             <div className="relative z-10 mx-auto max-w-330">
-              <div className="rounded-t-[2rem] border border-white/15 bg-[#1A1712] p-4 shadow-2xl shadow-black/35">
+              <div className="rounded-t-4xl border border-white/15 bg-[#1A1712] p-4 shadow-2xl shadow-black/35">
                 <div className="overflow-hidden rounded-t-[1.35rem] border border-white/10 bg-[#070604]">
-                  <div className="flex h-9 items-center justify-between border-b border-white/8 bg-white/[0.04] px-4">
+                  <div className="flex h-9 items-center justify-between border-b border-white/8 bg-white/4 px-4">
                     <div className="flex items-center gap-2">
                       <span className="h-2.5 w-2.5 rounded-full bg-[#E0655C]" />
                       <span className="h-2.5 w-2.5 rounded-full bg-[#D4A96A]" />
@@ -638,10 +672,10 @@ export default function AboutUniversity() {
                               >
                                 <span
                                   aria-hidden
-                                  className="absolute left-1/2 top-[-2.5rem] h-10 w-px -translate-x-1/2 bg-[#D4A96A]/45"
+                                  className="absolute left-1/2 -top-10 h-10 w-px -translate-x-1/2 bg-[#D4A96A]/45"
                                 />
                                 <div
-                                  className="min-h-58 rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
+                                  className="min-h-58 rounded-2xl border border-white/10 bg-white/4.5 px-4 py-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#D4A96A]/35 hover:bg-white/[0.07]"
                                 >
                                   <span
                                     className="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-[#D4A96A]/35 bg-[#0A0905] text-[11px] font-black text-[#D4A96A] tabular-nums"
@@ -705,7 +739,7 @@ export default function AboutUniversity() {
                 </div>
               </div>
 
-              <div className="mx-auto h-5 w-[92%] rounded-b-[2rem] border-x border-b border-white/10 bg-linear-to-b from-[#2A261F] to-[#14110D] shadow-2xl shadow-black/30" />
+              <div className="mx-auto h-5 w-[92%] rounded-b-4xl border-x border-b border-white/10 bg-linear-to-b from-[#2A261F] to-[#14110D] shadow-2xl shadow-black/30" />
               <div className="mx-auto h-3 w-[36%] rounded-b-3xl bg-[#D4A96A]/20" />
             </div>
           </div>

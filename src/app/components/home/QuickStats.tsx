@@ -14,7 +14,7 @@ const stats = [
     desc: "for future-ready learning",
   },
   {
-    number: "100+",
+    number: "250+",
     title: "Faculty Members",
     desc: "experienced academic experts",
   },
@@ -58,7 +58,7 @@ const item: Variants = {
 
 export default function QuickStats() {
   return (
-    <section className="w-full bg-[color:var(--soft-background)] px-5 py-20 text-[color:var(--foreground)] md:px-10 lg:px-16">
+    <section className="w-full bg-soft-background px-5 py-20 text-foreground md:px-10 lg:px-16">
       <div className="mx-auto max-w-425">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
           <motion.div
@@ -107,7 +107,7 @@ export default function QuickStats() {
               the numbers that define our growing university
             </h2>
 
-            <p className="mt-4 max-w-5xl text-base leading-relaxed text-[color:var(--secondary)]/80 md:text-lg">
+            <p className="mt-4 max-w-5xl text-base leading-relaxed text-(--secondary)/80 md:text-lg">
               Showcasing strong academic strength, modern infrastructure, expert
               faculty, and industry-focused learning opportunities for students.
             </p>
@@ -130,21 +130,21 @@ export default function QuickStats() {
                 scale: 1.02,
               }}
               transition={{ duration: 0.4 }}
-              className="group relative mx-auto flex aspect-square w-full max-w-[250px] flex-col items-center justify-center rounded-full bg-[color:var(--background)] text-center transition-all duration-500 hover:shadow-2xl sm:max-w-[260px] lg:max-w-[280px]"
+              className="group relative mx-auto flex aspect-square w-full max-w-62.5 flex-col items-center justify-center rounded-full bg-background text-center transition-all duration-500 hover:shadow-2xl sm:max-w-65 lg:max-w-70"
             >
               {/* Outer decorative ring */}
-              <div className="absolute inset-0 rounded-full border border-[color:var(--secondary)]/15 transition-all duration-500 group-hover:scale-[1.07] group-hover:border-[color:var(--primary)]" />
+              <div className="absolute inset-0 rounded-full border border-(--secondary)/15 transition-all duration-500 group-hover:scale-[1.07] group-hover:border-primary" />
               
               {/* Inner dashed rotating ring */}
-              <div className="absolute inset-3 rounded-full border border-dashed border-[color:var(--secondary)]/25 transition-transform duration-700 ease-in-out group-hover:rotate-180 group-hover:border-[color:var(--primary)]/50" />
+              <div className="absolute inset-3 rounded-full border border-dashed border-(--secondary)/25 transition-transform duration-700 ease-in-out group-hover:rotate-180 group-hover:border-(--primary)/50" />
               
               {/* Soft inner glow on hover */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-transparent to-[color:var(--secondary)]/[0.02] opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:to-[color:var(--primary)]/[0.08]" />
+              <div className="absolute inset-0 rounded-full bg-linear-to-b from-transparent to-(--secondary)/2 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:to-(--primary)/8" />
 
               {/* Content Container - Constrained width strictly prevents text from touching lines */}
               <div className="relative z-10 flex w-[80%] flex-col items-center justify-center sm:w-[75%]">
                 <h3
-                  className={`font-extrabold leading-none transition-colors duration-300 group-hover:text-[color:var(--primary)] ${
+                  className={`font-extrabold leading-none transition-colors duration-300 group-hover:text-primary ${
                     stat.number.length > 5
                       ? "text-2xl sm:text-3xl lg:text-4xl"
                       : "text-3xl sm:text-4xl md:text-5xl"
@@ -157,7 +157,7 @@ export default function QuickStats() {
                   {stat.title}
                 </p>
 
-                <p className="mt-1.5 text-xs leading-snug text-[color:var(--secondary)]/80 sm:mt-2 sm:text-sm md:text-base">
+                <p className="mt-1.5 text-xs leading-snug text-(--secondary)/80 sm:mt-2 sm:text-sm md:text-base">
                   {stat.desc}
                 </p>
               </div>
