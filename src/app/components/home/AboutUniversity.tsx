@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { icon: Landmark, value: "2003", label: "Founded" },
-  { icon: Building2, value: "8,000", label: "Sq.m. Campus" },
+  { icon: Landmark, value: "2005", label: "Founded" },
+  { icon: Building2, value: "20.45", label: "Acres Campus" },
   { icon: Users, value: "12,500+", label: "Students" },
   { icon: BookOpenCheck, value: "50+", label: "Academic Fields" },
   { icon: Globe2, value: "10+", label: "Collaborations" },

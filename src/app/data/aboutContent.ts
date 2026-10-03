@@ -49,7 +49,7 @@ export const chancellorMessageContent = {
   image:
     "https://res.cloudinary.com/dhlqc0ymy/image/upload/v1781322513/chancellor_l5obd5.png",
   message: [
-    "It gives me immense pleasure to welcome you to Thakur Yugraj Singh University, Fatehpur. Established in 2026, the University carries forward an educational journey that began in 2003 with a strong commitment to quality learning and social development.",
+    "It gives me immense pleasure to welcome you to Thakur Yugraj Singh University, Fatehpur. Established in 2026, the University carries forward an educational journey that began in 2005 with a strong commitment to quality learning and social development.",
     "TYS University has been created as a multidisciplinary institution where academic knowledge is strengthened through practical learning, innovation, research and exposure to artificial intelligence and emerging technologies. Our programmes are designed to develop professional competence, critical thinking, leadership and ethical responsibility among students.",
     "Guided by the principle \"Kaushalam, Balam, Charitram,\" we aim to nurture skilled, confident and responsible individuals who are prepared to build meaningful careers while contributing positively to society and the nation.",
     "I invite every student to become a part of this growing academic community and begin a journey of knowledge, character and achievement.",
