@@ -127,7 +127,7 @@ export default function FreshersPartySection() {
               modules={[Autoplay, Navigation, Pagination]}
               className="overflow-hidden rounded-3xl [--swiper-pagination-bullet-inactive-color:#ffffff] [--swiper-pagination-bullet-inactive-opacity:0.55] [--swiper-pagination-color:#F6C344]"
             >
-              {freshersPartyPhotos.map((photo, index) => (
+              {freshersPartyPhotos.map((photo) => (
                 <SwiperSlide key={photo.src}>
                   <figure className="relative aspect-video overflow-hidden bg-[#0D3157]">
                     <Image

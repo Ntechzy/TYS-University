@@ -22,6 +22,7 @@ import FactsAndFiguresSection from "./components/home/FactsAndFiguresSection";
 import FutureReadySection from "./components/home/FutureReadySection";
 import AwarenessInitiative from "./components/home/AwarenessInitiative";
 import FreshersPartySection from "./components/home/FreshersPartySection";
+import ViksitBharatSection from "./components/home/ViksitBharatSection";
 
 const pageTitle = "Best Private University in UP";
 const pageDescription =
@@ -130,6 +131,7 @@ export default function Home() {
       <BuildingPopup />
       <HeroSection/>
       <AwarenessInitiative/>
+      <ViksitBharatSection/>
       <FreshersPartySection/>
       <AboutUniversity/>
       <FutureReadySection/>
