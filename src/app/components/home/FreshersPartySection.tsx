@@ -105,6 +105,7 @@ export default function FreshersPartySection() {
         <div className="mt-10">
           <div className="relative min-w-0">
             <Swiper
+              nested
               loop
               speed={850}
               slidesPerView={1}

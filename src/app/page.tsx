@@ -21,10 +21,7 @@ import {
 import FactsAndFiguresSection from "./components/home/FactsAndFiguresSection";
 import FutureReadySection from "./components/home/FutureReadySection";
 import AwarenessInitiative from "./components/home/AwarenessInitiative";
-import FreshersPartySection from "./components/home/FreshersPartySection";
-import ViksitBharatSection from "./components/home/ViksitBharatSection";
-import KisanMelaSection from "./components/home/KisanMelaSection";
-import FilariaQuizSection from "./components/home/FilariaQuizSection";
+import CampusHighlightsCarousel from "./components/home/CampusHighlightsCarousel";
 
 const pageTitle = "Best Private University in UP";
 const pageDescription =
@@ -133,10 +130,7 @@ export default function Home() {
       <BuildingPopup />
       <HeroSection/>
       <AwarenessInitiative/>
-      <FilariaQuizSection/>
-      <KisanMelaSection/>
-      <ViksitBharatSection/>
-      <FreshersPartySection/>
+      <CampusHighlightsCarousel/>
       <AboutUniversity/>
       <FutureReadySection/>
       <CtaBanner 
