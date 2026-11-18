@@ -10,6 +10,7 @@ type AdmissionFormProps = {
   formId?: string;
   className?: string;
   title?: string;
+  titleId?: string;
   eyebrow?: string;
   eyebrowClassName?: string;
   locationLabel?: string;
@@ -44,6 +45,7 @@ export default function AdmissionForm({
   formId,
   className = "mx-auto w-full max-w-107.5 scroll-mt-24 rounded-xl border border-black/10 bg-white p-5 shadow-2xl sm:p-8 md:scroll-mt-32",
   title = "TYS UNIVERSITY",
+  titleId,
   eyebrow = "APPLY TODAY FOR",
   eyebrowClassName = "text-xs text-(--secondary)/80 sm:text-sm",
   locationLabel = "INDIA",
@@ -158,7 +160,7 @@ export default function AdmissionForm({
         <p className={eyebrowClassName}>
           {eyebrow}
         </p>
-        <h3 className="mt-2 text-lg font-bold text-primary sm:text-xl">
+        <h3 id={titleId} className="mt-2 text-lg font-bold text-primary sm:text-xl">
           {title}
         </h3>
         <p className="mt-1 text-sm font-semibold text-(--foreground)/70 sm:text-base">
